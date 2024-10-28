@@ -1,0 +1,14 @@
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\bin\Debug\net8.0\PcBuilder.Services.Data.Models.deps.json
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\bin\Debug\net8.0\PcBuilder.Services.Data.Models.runtimeconfig.json
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\bin\Debug\net8.0\PcBuilder.Services.Data.Models.dll
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\bin\Debug\net8.0\PcBuilder.Services.Data.Models.pdb
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.csproj.AssemblyReference.cache
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.AssemblyInfo.cs
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.dll
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\refint\PcBuilder.Services.Data.Models.dll
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.pdb
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\PcBuilder.Services.Data.Models.genruntimeconfig.cache
+C:\Users\Kartof\source\repos\PcBuilderWeb\PcBuilder.Services.Data.Models\obj\Debug\net8.0\ref\PcBuilder.Services.Data.Models.dll
