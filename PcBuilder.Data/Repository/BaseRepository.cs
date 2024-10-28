@@ -14,10 +14,10 @@ namespace PcBuilder.Data.Repository
     public class BaseRepository<TType, TId> : IRepository<TType, TId>
         where TType : class
     {
-        private readonly PcBuilderDbContext dbContext;
+        private readonly PCBuilderDbContext dbContext;
         private readonly DbSet<TType> dbSet;
 
-        public BaseRepository(PcBuilderDbContext dbContext)
+        public BaseRepository(PCBuilderDbContext dbContext)
         {
             this.dbContext = dbContext;
             this.dbSet = this.dbContext.Set<TType>();

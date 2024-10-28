@@ -6,6 +6,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using static PcBuilder.Common.UserValidation;
 
 namespace PcBuilder.Data.Models
 {
@@ -15,12 +16,16 @@ namespace PcBuilder.Data.Models
         {
             Id = Guid.NewGuid();
             SecurityStamp = Guid.NewGuid().ToString();
+            Products = new List<Product>();
         }
-        [Required, MaxLength()]
+        [Required, MaxLength(MaxlengthFirstName)]
         public string FirstName { get; set; } = null!;
 
-        [Required, MaxLength()]
+        [Required, MaxLength(MaxlengthSecondName)]
         public string LastName { get; set; } = null!;
+
+        public virtual IEnumerable<Product> Products { get; set; }
+
 
     }
 }

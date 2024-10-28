@@ -1428,22 +1428,6 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.InMemory/8.0.10": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.10"
-        },
-        "compile": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.EntityFrameworkCore.Relational/8.0.10": {
         "type": "package",
         "dependencies": {
@@ -5301,21 +5285,6 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.InMemory/8.0.10": {
-      "sha512": "TdtSEbBsMg8dFq5T1PiOv48w2oiiduNzaEf3Fa7tO2b3lTBFO1y1Dla6ihs628P53TowsScjLSG8g5ZEw6KN0Q==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.inmemory/8.0.10",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll",
-        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.xml",
-        "microsoft.entityframeworkcore.inmemory.8.0.10.nupkg.sha512",
-        "microsoft.entityframeworkcore.inmemory.nuspec"
-      ]
-    },
     "Microsoft.EntityFrameworkCore.Relational/8.0.10": {
       "sha512": "OefBEE47kGKPRPV3OT+FAW6o5BFgLk2D9EoeWVy7NbOepzUneayLQxbVE098FfedTyMwxvZQoDD9LrvZc3MadA==",
       "type": "package",
@@ -8186,7 +8155,6 @@
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 8.0.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.10",
-      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 8.0.2",
@@ -8200,11 +8168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
       "projectName": "PcBuilder.Services.Data.Models",
-      "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+      "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
       "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\obj\\",
+      "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8247,10 +8215,6 @@
             "version": "[8.0.10, )"
           },
           "Microsoft.AspNetCore.Identity.UI": {
-            "target": "Package",
-            "version": "[8.0.10, )"
-          },
-          "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[8.0.10, )"
           },

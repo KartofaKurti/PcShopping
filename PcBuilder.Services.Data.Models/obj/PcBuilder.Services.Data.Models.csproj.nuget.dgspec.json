@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {}
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
         "projectName": "PcBuilder.Services.Data.Models",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,10 +54,6 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

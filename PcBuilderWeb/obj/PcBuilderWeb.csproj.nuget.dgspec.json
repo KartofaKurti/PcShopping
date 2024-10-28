@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilderWeb\\PcBuilderWeb.csproj": {}
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\PcBuilderWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj",
         "projectName": "PcBuilder.Common",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,10 +57,6 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -100,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj",
         "projectName": "PcBuilder.Data.Models",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -129,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj"
               }
             }
           }
@@ -154,10 +150,6 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.10, )"
             },
@@ -200,14 +192,14 @@
         }
       }
     },
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj",
         "projectName": "PcBuilder.Data",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -229,11 +221,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
               }
             }
           }
@@ -257,10 +249,6 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.10, )"
             },
@@ -303,14 +291,14 @@
         }
       }
     },
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
         "projectName": "PcBuilder.Services.Data.Models",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -356,10 +344,6 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -399,14 +383,14 @@
         }
       }
     },
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj",
         "projectName": "PcBuilder.Services.Data",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -428,14 +412,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj"
               }
             }
           }
@@ -462,10 +446,6 @@
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -505,14 +485,14 @@
         }
       }
     },
-    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilderWeb\\PcBuilderWeb.csproj": {
+    "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\PcBuilderWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilderWeb\\PcBuilderWeb.csproj",
+        "projectUniqueName": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\PcBuilderWeb.csproj",
         "projectName": "PcBuilderWeb",
-        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilderWeb\\PcBuilderWeb.csproj",
+        "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\PcBuilderWeb.csproj",
         "packagesPath": "C:\\Users\\Kartof\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilderWeb\\obj\\",
+        "outputPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -534,20 +514,20 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Common\\PcBuilder.Common.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Common\\PcBuilder.Common.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data.Models\\PcBuilder.Data.Models.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj"
               },
-              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj": {
-                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj"
+              "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj": {
+                "projectPath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data\\PcBuilder.Services.Data.csproj"
               }
             }
           }
@@ -575,10 +555,6 @@
               "version": "[8.0.10, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
-              "target": "Package",
-              "version": "[8.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

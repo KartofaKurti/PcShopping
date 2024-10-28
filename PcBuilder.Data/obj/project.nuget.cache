@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0dZMqQlp3PkyPZDKXaxUVMMKutt2GvZQSRFiBj+65t6+mHIMfBdOXJLvlXnW5WeDDZoG2kU9VlMqGVx5Yl3jXQ==",
+  "dgSpecHash": "JsCsoBbnczESbJwssGgnuDY7DpglsRbM5v3ynWbsMbo0KCvGpa2h9Er2eyARLr2bp0j0EqwpQSAAfrkLqF0/hA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcBuilder.Data\\PcBuilder.Data.csproj",
+  "projectFilePath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Data\\PcBuilder.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kartof\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
@@ -85,7 +85,6 @@
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.10\\microsoft.entityframeworkcore.abstractions.8.0.10.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.10\\microsoft.entityframeworkcore.analyzers.8.0.10.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.10\\microsoft.entityframeworkcore.design.8.0.10.nupkg.sha512",
-    "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.10\\microsoft.entityframeworkcore.inmemory.8.0.10.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.10\\microsoft.entityframeworkcore.relational.8.0.10.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.10\\microsoft.entityframeworkcore.sqlserver.8.0.10.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.10\\microsoft.entityframeworkcore.tools.8.0.10.nupkg.sha512",

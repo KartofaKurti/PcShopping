@@ -5,13 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connectionString =
     builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-var testAreaConnString =
-    builder.Configuration.GetConnectionString("ServiceAreaConnection") ?? throw new InvalidOperationException("Connection string 'ServiceAreaConnection' not found.");
 
-builder.Services.AddDbContext<PcBuilderDbContext>(options =>
+
+builder.Services.AddDbContext<PCBuilderDbContext>(options =>
     options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<PcBuilderDbContext>(options =>
-    options.UseSqlServer(testAreaConnString));
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
