@@ -1,0 +1,12 @@
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Web.ViewModels.deps.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.AssemblyInfoInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.AssemblyInfo.cs
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.sourcelink.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\refint\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\ref\PcBuilder.Web.ViewModels.dll
