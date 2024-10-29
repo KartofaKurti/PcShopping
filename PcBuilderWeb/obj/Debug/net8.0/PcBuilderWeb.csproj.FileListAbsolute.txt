@@ -622,3 +622,7 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\obj\D
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\obj\Debug\net8.0\PcBuilderWeb.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\obj\Debug\net8.0\PcBuilderWeb.genruntimeconfig.cache
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\obj\Debug\net8.0\ref\PcBuilderWeb.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.Infrastructure.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.Infrastructure.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.ViewModels.pdb

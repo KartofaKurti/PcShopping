@@ -21,7 +21,9 @@
           "PcBuilder.Data": "1.0.0",
           "PcBuilder.Data.Models": "1.0.0",
           "PcBuilder.Services.Data": "1.0.0",
-          "PcBuilder.Services.Data.Models": "1.0.0"
+          "PcBuilder.Services.Data.Models": "1.0.0",
+          "PcBuilder.Web.Infrastructure": "1.0.0",
+          "PcBuilder.Web.ViewModels": "1.0.0"
         },
         "runtime": {
           "PcBuilderWeb.dll": {}
@@ -2344,6 +2346,21 @@
         "runtime": {
           "PcBuilder.Services.Data.Models.dll": {}
         }
+      },
+      "PcBuilder.Web.Infrastructure/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2",
+          "PcBuilder.Data": "1.0.0",
+          "PcBuilder.Data.Models": "1.0.0"
+        },
+        "runtime": {
+          "PcBuilder.Web.Infrastructure.dll": {}
+        }
+      },
+      "PcBuilder.Web.ViewModels/1.0.0": {
+        "runtime": {
+          "PcBuilder.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -3662,6 +3679,16 @@
       "sha512": ""
     },
     "PcBuilder.Services.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PcBuilder.Web.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PcBuilder.Web.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

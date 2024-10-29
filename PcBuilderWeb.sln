@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilderWeb", "PcBuilderWeb\PcBuilderWeb.csproj", "{9B4BDBEF-E6A0-40E7-BBA5-CDD0E45CE4F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilderWeb", "PcBuilderWeb\PcBuilderWeb.csproj", "{9B4BDBEF-E6A0-40E7-BBA5-CDD0E45CE4F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{F6A44BD2-96B3-40BD-B3D4-4C580A43BD73}"
 EndProject
@@ -13,15 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{21A3BC7B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{6DFEBFD3-F52E-40F0-867F-56CC987D20A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Common", "PcBuilder.Common\PcBuilder.Common.csproj", "{E6AB7681-E23D-4571-9F21-EA86D6A4F139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilder.Common", "PcBuilder.Common\PcBuilder.Common.csproj", "{E6AB7681-E23D-4571-9F21-EA86D6A4F139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Data", "PcBuilder.Data\PcBuilder.Data.csproj", "{4F9CB00C-EE49-49F1-899D-C40F787ED05C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilder.Data", "PcBuilder.Data\PcBuilder.Data.csproj", "{4F9CB00C-EE49-49F1-899D-C40F787ED05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Data.Models", "PcBuilder.Data.Models\PcBuilder.Data.Models.csproj", "{521836C9-60B3-4721-BF60-FE156D83FFF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilder.Data.Models", "PcBuilder.Data.Models\PcBuilder.Data.Models.csproj", "{521836C9-60B3-4721-BF60-FE156D83FFF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Services.Data", "PcBuilder.Services.Data\PcBuilder.Services.Data.csproj", "{B98A0F78-D8DD-499F-8200-C31DFD06CD79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilder.Services.Data", "PcBuilder.Services.Data\PcBuilder.Services.Data.csproj", "{B98A0F78-D8DD-499F-8200-C31DFD06CD79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Services.Data.Models", "PcBuilder.Services.Data.Models\PcBuilder.Services.Data.Models.csproj", "{262313D3-256B-44C8-8B3B-C9CFF926ADA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcBuilder.Services.Data.Models", "PcBuilder.Services.Data.Models\PcBuilder.Services.Data.Models.csproj", "{262313D3-256B-44C8-8B3B-C9CFF926ADA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Web.Infrastructure", "PcBuilder.Web.Infrastructure\PcBuilder.Web.Infrastructure.csproj", "{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcBuilder.Web.ViewModels", "PcBuilder.Web.ViewModels\PcBuilder.Web.ViewModels.csproj", "{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,14 @@ Global
 		{262313D3-256B-44C8-8B3B-C9CFF926ADA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{262313D3-256B-44C8-8B3B-C9CFF926ADA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{262313D3-256B-44C8-8B3B-C9CFF926ADA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +75,8 @@ Global
 		{521836C9-60B3-4721-BF60-FE156D83FFF3} = {5A7688E9-44AB-4EC8-A353-98959B69D293}
 		{B98A0F78-D8DD-499F-8200-C31DFD06CD79} = {6DFEBFD3-F52E-40F0-867F-56CC987D20A4}
 		{262313D3-256B-44C8-8B3B-C9CFF926ADA0} = {6DFEBFD3-F52E-40F0-867F-56CC987D20A4}
+		{C5B9CDAE-DFEE-4F96-B6CB-8F71ED6395DB} = {F6A44BD2-96B3-40BD-B3D4-4C580A43BD73}
+		{A0FDE94A-7A9B-4B1B-AD78-2003FB1F3213} = {F6A44BD2-96B3-40BD-B3D4-4C580A43BD73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE8FBBD7-36EC-4717-ABAB-7BAC69991842}

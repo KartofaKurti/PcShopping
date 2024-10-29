@@ -10,8 +10,11 @@ namespace PcBuilder.Data.Models
     public class Manufacturer
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; } 
+
         [Required]
-        public string Name { get; set; }
+        public string ManufacturerName { get; set; }
+
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

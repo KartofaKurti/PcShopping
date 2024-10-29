@@ -27,6 +27,8 @@
     <ProjectReference Include="..\PcBuilder.Data\PcBuilder.Data.csproj" />
     <ProjectReference Include="..\PcBuilder.Services.Data.Models\PcBuilder.Services.Data.Models.csproj" />
     <ProjectReference Include="..\PcBuilder.Services.Data\PcBuilder.Services.Data.csproj" />
+    <ProjectReference Include="..\PcBuilder.Web.Infrastructure\PcBuilder.Web.Infrastructure.csproj" />
+    <ProjectReference Include="..\PcBuilder.Web.ViewModels\PcBuilder.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

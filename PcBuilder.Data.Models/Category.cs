@@ -10,11 +10,13 @@ namespace PcBuilder.Data.Models
     public class Category
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MinLength(5)]
         [MaxLength(30)]
         public string CategoryName { get; set; }
+
+        public ICollection<Product> Products { get; set; } = new List<Product>();
     }
 }

@@ -11,7 +11,7 @@ namespace PcBuilder.Data.Models
     public class Order
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } 
 
         [Required]
         public DateTime OrderDate { get; set; }

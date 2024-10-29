@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using PcBuilderWeb.Models;
+using PcBuilder.Web.ViewModels;
 using System.Diagnostics;
 
 namespace PcBuilderWeb.Controllers

@@ -8,15 +8,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PcBuilder.Data.Models;
 using System.Reflection;
+using PcBuilder.Data.Configurations;
 
 namespace PcBuilder.Data
 {
     public class PCBuilderDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Manufacturer> Manufacturer { get; set; }
-        public DbSet<Order> Order { get; set; }
-        public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductsCategories { get; set; }
 
         public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
@@ -29,6 +30,15 @@ namespace PcBuilder.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ProductCategory>()
                 .HasKey(cr => new { cr.ClientId, cr.ProductId });
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Manufacturer)
+                .WithMany(m => m.Products)
+                .HasForeignKey(p => p.ManufacturerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
+            modelBuilder.ApplyConfiguration(new CategoryEntityConfigurations());
+            modelBuilder.ApplyConfiguration(new ProductEntityConfigurations());
         }
     }
 }

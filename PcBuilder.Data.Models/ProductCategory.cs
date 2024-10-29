@@ -18,7 +18,6 @@ namespace PcBuilder.Data.Models
 
         [ForeignKey(nameof(Client))]
         public Guid ClientId { get; set; }
-
         public ApplicationUser Client { get; set; }
     }
 }

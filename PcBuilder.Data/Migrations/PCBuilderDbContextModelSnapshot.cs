@@ -231,9 +231,11 @@ namespace PcBuilder.Data.Migrations
 
             modelBuilder.Entity("PcBuilder.Data.Models.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
@@ -242,22 +244,63 @@ namespace PcBuilder.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryName = "Processor"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryName = "Graphics Card"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryName = "Memory"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryName = "Storage"
+                        });
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Manufacturer", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ManufacturerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Manufacturer");
+                    b.ToTable("Manufacturers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ManufacturerName = "Intel"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ManufacturerName = "AMD"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ManufacturerName = "NVIDIA"
+                        });
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
@@ -288,7 +331,7 @@ namespace PcBuilder.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
@@ -296,6 +339,9 @@ namespace PcBuilder.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("AddedOn")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid?>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
@@ -305,8 +351,11 @@ namespace PcBuilder.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
-                    b.Property<Guid>("ProductCategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ManufacturerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductCategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("ProductDescription")
                         .IsRequired()
@@ -327,9 +376,25 @@ namespace PcBuilder.Data.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
+                    b.HasIndex("ManufacturerId");
+
                     b.HasIndex("ProductCategoryId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("b3112d8b-6bef-4ca5-904e-6b1144e9cae7"),
+                            AddedOn = new DateTime(2024, 10, 29, 0, 0, 0, 0, DateTimeKind.Local),
+                            ImageUrl = "Balls",
+                            ManufacturerId = 1,
+                            ProductCategoryId = 1,
+                            ProductDescription = "16 Threats 4.5Ghz",
+                            ProductName = "Intel Core I9",
+                            ProductPrice = 300m,
+                            StockQuantity = 5
+                        });
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.ProductCategory", b =>
@@ -423,11 +488,19 @@ namespace PcBuilder.Data.Migrations
                         .WithMany("Products")
                         .HasForeignKey("ApplicationUserId");
 
+                    b.HasOne("PcBuilder.Data.Models.Manufacturer", "Manufacturer")
+                        .WithMany("Products")
+                        .HasForeignKey("ManufacturerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("PcBuilder.Data.Models.Category", "ProductCategory")
-                        .WithMany()
+                        .WithMany("Products")
                         .HasForeignKey("ProductCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Manufacturer");
 
                     b.Navigation("ProductCategory");
                 });
@@ -452,6 +525,16 @@ namespace PcBuilder.Data.Migrations
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("PcBuilder.Data.Models.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("PcBuilder.Data.Models.Manufacturer", b =>
                 {
                     b.Navigation("Products");
                 });

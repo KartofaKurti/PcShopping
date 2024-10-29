@@ -13,7 +13,7 @@ namespace PcBuilder.Data.Models
     public class Product
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         [Required]
         [MinLength(MinlengthProductName)]
@@ -24,7 +24,10 @@ namespace PcBuilder.Data.Models
         public decimal ProductPrice { get; set; } 
 
         [Required]
-        public int StockQuantity { get; set; } 
+        public int StockQuantity { get; set; }
+
+        [Required]
+        public DateTime AddedOn { get; set; }
 
         [Required]
         [MinLength(MinlengthDescription)]
@@ -35,8 +38,11 @@ namespace PcBuilder.Data.Models
         public string ImageUrl { get; set; } = null!;
 
         [ForeignKey(nameof(ProductCategory))]
-        public Guid ProductCategoryId { get; set; }
-
+        public int ProductCategoryId { get; set; }
         public virtual Category ProductCategory { get; set; } = null!;
+
+        [ForeignKey(nameof(Manufacturer))]
+        public int ManufacturerId { get; set; }
+        public virtual Manufacturer Manufacturer { get; set; } = null!;
     }
 }
