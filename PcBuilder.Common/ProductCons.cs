@@ -16,4 +16,15 @@
         public const int MaxlengthSecondName = 30;
     }
 
+    public class ProductValidation
+    {
+
+    }
+
+    public class DateValidation()
+    {
+	    public const string ReleaseDateFormat = "MM/yyyy";
+	}
+
+
 }

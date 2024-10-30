@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AMdLigOMjuBmOuqFX3cxJAp6N/HQ0rxfjiy6A21sCp0Xr9KvSWCQaIBuTu/Lgwqdhy0P0YwiSSLCBC8KY/dY0w==",
+  "dgSpecHash": "nkrYFsqFnXBTpWndRpT1LpqXHJ8L9fRPzr2mQ76mRreSo+U+WWolMvng0OcFG3n637YxtjbpdovuBVayHOwjzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Services.Data.Models\\PcBuilder.Services.Data.Models.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Kartof\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Kartof\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

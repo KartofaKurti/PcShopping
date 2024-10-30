@@ -10,3 +10,11 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.View
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\refint\PcBuilder.Web.ViewModels.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\ref\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Common.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Data.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Data.Models.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Common.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Data.Models.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Data.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.csproj.AssemblyReference.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.csproj.CopyComplete

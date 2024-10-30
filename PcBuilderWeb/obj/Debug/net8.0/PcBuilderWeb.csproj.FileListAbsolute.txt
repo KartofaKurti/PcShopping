@@ -626,3 +626,6 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\D
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.Infrastructure.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.ViewModels.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Service.Mapping.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.Service.Mapping.pdb

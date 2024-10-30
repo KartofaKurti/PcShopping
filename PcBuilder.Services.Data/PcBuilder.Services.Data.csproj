@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10" />
@@ -22,7 +23,10 @@
   <ItemGroup>
     <ProjectReference Include="..\PcBuilder.Common\PcBuilder.Common.csproj" />
     <ProjectReference Include="..\PcBuilder.Data.Models\PcBuilder.Data.Models.csproj" />
+    <ProjectReference Include="..\PcBuilder.Data\PcBuilder.Data.csproj" />
+    <ProjectReference Include="..\PcBuilder.Service.Mapping\PcBuilder.Service.Mapping.csproj" />
     <ProjectReference Include="..\PcBuilder.Services.Data.Models\PcBuilder.Services.Data.Models.csproj" />
+    <ProjectReference Include="..\PcBuilder.Web.ViewModels\PcBuilder.Web.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

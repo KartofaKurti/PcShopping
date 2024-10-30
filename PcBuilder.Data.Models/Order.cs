@@ -22,9 +22,7 @@ namespace PcBuilder.Data.Models
         [Required]
         public string Adress { get; set; }
 
-        [ForeignKey(nameof(Product))]
-        public Guid ProductId { get; set; }
-        public Product Product { get; set; }
-        public ApplicationUser AplApplicationUser { get; set; }
+        public IEnumerable<Product> Product { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
     }
 }

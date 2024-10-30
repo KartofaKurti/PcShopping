@@ -11,9 +11,9 @@ using PcBuilder.Data.Repository.Interfaces;
 
 namespace PcBuilder.Data.Repository
 {
-    public class BaseRepository<TType, TId> : IRepository<TType, TId>
-        where TType : class
-    {
+	public class BaseRepository<TType, TId> : IRepository<TType, TId>
+		where TType : class
+	{
         private readonly PCBuilderDbContext dbContext;
         private readonly DbSet<TType> dbSet;
 

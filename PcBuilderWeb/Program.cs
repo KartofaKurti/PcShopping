@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PcBuilder.Data;
 using PcBuilder.Data.Models;
+using PcBuilder.Services.Data;
+using PcBuilder.Services.Data.Interfaces;
+using PcBuilder.Web.Infrastructure.Extensions;
 using PcBuilder.Web.Infrastructure.Extentions;
 
 public class Program
@@ -15,33 +18,38 @@ public class Program
             throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 
-        builder.Services.AddDbContext<PCBuilderDbContext>(options =>
-            options.UseSqlServer(connectionString));
+        builder.Services
+	        .AddDbContext<PCBuilderDbContext>(options =>
+            {
+	        options.UseSqlServer(connectionString);
+	        });
 
         builder.Services
-            .AddIdentity<ApplicationUser, IdentityRole<Guid>>(
-                cfg =>
+            .AddIdentity<ApplicationUser, IdentityRole<Guid>>(cfg =>
                 {
                     ConfigureIdentity(builder, cfg); 
-
                 })
             .AddEntityFrameworkStores<PCBuilderDbContext>()
             .AddRoles<IdentityRole<Guid>>()
             .AddSignInManager<SignInManager<ApplicationUser>>()
             .AddUserManager<UserManager<ApplicationUser>>();
 
+
         builder.Services.ConfigureApplicationCookie(cfg =>
         {
             cfg.LoginPath = "/Identity/Account/Login";
+            cfg.AccessDeniedPath = "/Home/Error/401";
         });
 
-        builder.Services.RegisterRepositories(typeof(ApplicationUser).Assembly);
+		builder.Services.RegisterRepositories(typeof(ApplicationUser).Assembly);
+		builder.Services.RegisterUserDefinedServices(typeof(IProductService).Assembly);
 
+		builder.Services.AddScoped<IProductService, ProductService>();
 
-        // Add services to the container.
-        builder.Services.AddControllersWithViews();
+		builder.Services.AddControllersWithViews();
+		builder.Services.AddRazorPages();
 
-        var app = builder.Build();
+		var app = builder.Build();
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -62,6 +70,8 @@ public class Program
         app.MapControllerRoute(
             name: "default",
             pattern: "{controller=Home}/{action=Index}/{id?}");
+
+        app.ApplyMigrations();
 
         app.Run();
 
