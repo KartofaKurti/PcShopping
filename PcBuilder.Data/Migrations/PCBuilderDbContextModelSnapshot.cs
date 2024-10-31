@@ -313,23 +313,18 @@ namespace PcBuilder.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("AplApplicationUserId")
+                    b.Property<Guid>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("ProductQuantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AplApplicationUserId");
-
-                    b.HasIndex("ProductId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Orders");
                 });
@@ -346,6 +341,9 @@ namespace PcBuilder.Data.Migrations
                     b.Property<Guid?>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasMaxLength(2048)
@@ -354,8 +352,8 @@ namespace PcBuilder.Data.Migrations
                     b.Property<int>("ManufacturerId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductCategoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("OrderId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ProductDescription")
                         .IsRequired()
@@ -376,20 +374,22 @@ namespace PcBuilder.Data.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
+                    b.HasIndex("CategoryId");
+
                     b.HasIndex("ManufacturerId");
 
-                    b.HasIndex("ProductCategoryId");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b3112d8b-6bef-4ca5-904e-6b1144e9cae7"),
-                            AddedOn = new DateTime(2024, 10, 29, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("095486a0-278b-497c-bdc8-3175d4ba7124"),
+                            AddedOn = new DateTime(2024, 10, 31, 0, 0, 0, 0, DateTimeKind.Local),
+                            CategoryId = 1,
                             ImageUrl = "Balls",
                             ManufacturerId = 1,
-                            ProductCategoryId = 1,
                             ProductDescription = "16 Threats 4.5Ghz",
                             ProductName = "Intel Core I9",
                             ProductPrice = 300m,
@@ -465,21 +465,13 @@ namespace PcBuilder.Data.Migrations
 
             modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
                 {
-                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "AplApplicationUser")
+                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("AplApplicationUserId")
+                        .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PcBuilder.Data.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("AplApplicationUser");
-
-                    b.Navigation("Product");
+                    b.Navigation("ApplicationUser");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
@@ -488,21 +480,25 @@ namespace PcBuilder.Data.Migrations
                         .WithMany("Products")
                         .HasForeignKey("ApplicationUserId");
 
-                    b.HasOne("PcBuilder.Data.Models.Manufacturer", "Manufacturer")
+                    b.HasOne("PcBuilder.Data.Models.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("ManufacturerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("PcBuilder.Data.Models.Category", "ProductCategory")
-                        .WithMany("Products")
-                        .HasForeignKey("ProductCategoryId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Manufacturer");
+                    b.HasOne("PcBuilder.Data.Models.Manufacturer", "Manufacturer")
+                        .WithMany("Products")
+                        .HasForeignKey("ManufacturerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("ProductCategory");
+                    b.HasOne("PcBuilder.Data.Models.Order", null)
+                        .WithMany("Product")
+                        .HasForeignKey("OrderId");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Manufacturer");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.ProductCategory", b =>
@@ -537,6 +533,11 @@ namespace PcBuilder.Data.Migrations
             modelBuilder.Entity("PcBuilder.Data.Models.Manufacturer", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
+                {
+                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

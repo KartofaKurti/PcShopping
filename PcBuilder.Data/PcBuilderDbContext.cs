@@ -30,11 +30,7 @@ namespace PcBuilder.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ProductCategory>()
                 .HasKey(cr => new { cr.ClientId, cr.ProductId });
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.Manufacturer)
-                .WithMany(m => m.Products)
-                .HasForeignKey(p => p.ManufacturerId)
-                .OnDelete(DeleteBehavior.Restrict);
+
 
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
             modelBuilder.ApplyConfiguration(new CategoryEntityConfigurations());

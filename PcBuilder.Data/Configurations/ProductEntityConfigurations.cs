@@ -31,7 +31,7 @@ namespace PcBuilder.Data.Configurations
                 AddedOn = DateTime.Today,
                 ProductDescription = "16 Threats 4.5Ghz",
                 ImageUrl = "Balls",
-                ProductCategoryId = 1,
+                CategoryId = 1,
                 ManufacturerId = 1,
             }};
 

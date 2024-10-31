@@ -75,7 +75,7 @@ public class Program
 
         app.Run();
 
-         static void ConfigureIdentity(WebApplicationBuilder builder, IdentityOptions cfg)
+	    static void ConfigureIdentity(WebApplicationBuilder builder, IdentityOptions cfg)
         {
             cfg.Password.RequireDigit =
                 builder.Configuration.GetValue<bool>("Identity:Password:RequireDigits");

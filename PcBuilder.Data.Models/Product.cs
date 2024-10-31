@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PcBuilder.Data.Models.Enums;
 using static PcBuilder.Common.ProductCons;
 
 
@@ -38,11 +39,11 @@ namespace PcBuilder.Data.Models
         public string ImageUrl { get; set; } = null!;
 
         [ForeignKey(nameof(ProductCategory))]
-        public int ProductCategoryId { get; set; }
-        public virtual Category ProductCategory { get; set; } = null!;
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; } 
 
         [ForeignKey(nameof(Manufacturer))]
         public int ManufacturerId { get; set; }
-        public virtual Manufacturer Manufacturer { get; set; } = null!;
+        public virtual Manufacturer Manufacturer { get; set; } 
     }
 }
