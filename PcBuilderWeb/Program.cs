@@ -39,16 +39,6 @@ public class Program
                         builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
                     cfg.Password.RequiredUniqueChars =
                         builder.Configuration.GetValue<int>("Identity:Password:RequiredUniqueCharacters");
-
-                    cfg.SignIn.RequireConfirmedAccount =
-                        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
-                    cfg.SignIn.RequireConfirmedEmail =
-                        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedEmail");
-                    cfg.SignIn.RequireConfirmedPhoneNumber =
-                        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedPhoneNumber");
-
-                    cfg.User.RequireUniqueEmail =
-                        builder.Configuration.GetValue<bool>("Identity:User:RequireUniqueEmail");
                 })
             .AddEntityFrameworkStores<PCBuilderDbContext>()
             .AddRoles<IdentityRole<Guid>>()
@@ -59,7 +49,7 @@ public class Program
 
         builder.Services.ConfigureApplicationCookie(cfg =>
         {
-            cfg.LoginPath = "/Identity/Account/Login";
+            cfg.LoginPath = "/User/Login";
             cfg.AccessDeniedPath = "/Home/Error/401";
         });
 
@@ -70,6 +60,7 @@ public class Program
 
 		builder.Services.AddControllersWithViews();
 		builder.Services.AddRazorPages();
+
 
 		var app = builder.Build();
 
