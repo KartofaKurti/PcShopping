@@ -38,7 +38,7 @@ namespace PcBuilder.Data.Models
         [MaxLength(MaxlengthImageUrl)]
         public string ImageUrl { get; set; } = null!;
 
-        [ForeignKey(nameof(ProductCategory))]
+        [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; } 
 

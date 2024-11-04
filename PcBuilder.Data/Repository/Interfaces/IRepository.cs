@@ -1,42 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PcBuilder.Data.Repository.Interfaces
+﻿namespace PcBuilder.Data.Repository.Interfaces
 {
-    public interface IRepository<TType, TId>
-    {
-        TType GetById(TId id);
+	using System.Linq.Expressions;
 
-        Task<TType> GetByIdAsync(TId id);
+	public interface IRepository<TType, TId>
+	{
+		TType GetById(TId id);
 
-        TType FirstOrDefault(Func<TType, bool> predicate);
+		Task<TType> GetByIdAsync(TId id);
 
-        Task<TType> FirstOrDefaultAsync(Expression<Func<TType, bool>> predicate);
+		TType FirstOrDefault(Func<TType, bool> predicate);
 
-        IEnumerable<TType> GetAll();
+		Task<TType> FirstOrDefaultAsync(Expression<Func<TType, bool>> predicate);
 
-        Task<IEnumerable<TType>> GetAllAsync();
+		IEnumerable<TType> GetAll();
 
-        IQueryable<TType> GetAllAttached();
+		Task<IEnumerable<TType>> GetAllAsync();
 
-        void Add(TType item);
+		IQueryable<TType> GetAllAttached();
 
-        Task AddAsync(TType item);
+		void Add(TType item);
 
-        void AddRange(TType[] items);
+		Task AddAsync(TType item);
 
-        Task AddRangeAsync(TType[] items);
+		void AddRange(TType[] items);
 
-        bool Delete(TId id);
+		Task AddRangeAsync(TType[] items);
 
-        Task<bool> DeleteAsync(TId id);
+		bool Delete(TType entity);
 
-        bool Update(TType item);
+		Task<bool> DeleteAsync(TType entity);
 
-        Task<bool> UpdateAsync(TType item);
-    }
+		bool Update(TType item);
+
+		Task<bool> UpdateAsync(TType item);
+	}
 }

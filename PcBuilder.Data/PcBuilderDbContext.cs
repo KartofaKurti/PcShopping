@@ -18,7 +18,7 @@ namespace PcBuilder.Data
         public DbSet<Manufacturer> Manufacturers { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<ProductCategory> ProductsCategories { get; set; }
+        public DbSet<ApplicationUserProduct> ApplicationUsersProducts { get; set; }
 
         public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
             : base(options)
@@ -28,8 +28,8 @@ namespace PcBuilder.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<ProductCategory>()
-                .HasKey(cr => new { cr.ClientId, cr.ProductId });
+            modelBuilder.Entity<ApplicationUserProduct>()
+                .HasKey(cr => new { cr.ApplicationUserId, cr.ProductId });
 
 
             modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());

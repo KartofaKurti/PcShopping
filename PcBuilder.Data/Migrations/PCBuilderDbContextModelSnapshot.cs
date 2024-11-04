@@ -229,6 +229,21 @@ namespace PcBuilder.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUserProduct", b =>
+                {
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ApplicationUserId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ApplicationUsersProducts");
+                });
+
             modelBuilder.Entity("PcBuilder.Data.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -385,8 +400,8 @@ namespace PcBuilder.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("095486a0-278b-497c-bdc8-3175d4ba7124"),
-                            AddedOn = new DateTime(2024, 10, 31, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("6bfb34e2-7283-4e4a-8d80-86d0a16b9b84"),
+                            AddedOn = new DateTime(2024, 11, 4, 0, 0, 0, 0, DateTimeKind.Local),
                             CategoryId = 1,
                             ImageUrl = "Balls",
                             ManufacturerId = 1,
@@ -395,21 +410,6 @@ namespace PcBuilder.Data.Migrations
                             ProductPrice = 300m,
                             StockQuantity = 5
                         });
-                });
-
-            modelBuilder.Entity("PcBuilder.Data.Models.ProductCategory", b =>
-                {
-                    b.Property<Guid>("ClientId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ClientId", "ProductId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductsCategories");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -463,6 +463,25 @@ namespace PcBuilder.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUserProduct", b =>
+                {
+                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PcBuilder.Data.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
                 {
                     b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
@@ -499,25 +518,6 @@ namespace PcBuilder.Data.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Manufacturer");
-                });
-
-            modelBuilder.Entity("PcBuilder.Data.Models.ProductCategory", b =>
-                {
-                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PcBuilder.Data.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUser", b =>
