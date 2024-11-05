@@ -364,6 +364,9 @@ namespace PcBuilder.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ManufacturerId")
                         .HasColumnType("int");
 
@@ -400,10 +403,11 @@ namespace PcBuilder.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6bfb34e2-7283-4e4a-8d80-86d0a16b9b84"),
-                            AddedOn = new DateTime(2024, 11, 4, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("f9045b9d-81f5-4b68-a8da-a516f444f24e"),
+                            AddedOn = new DateTime(2024, 11, 5, 0, 0, 0, 0, DateTimeKind.Local),
                             CategoryId = 1,
                             ImageUrl = "Balls",
+                            IsDeleted = false,
                             ManufacturerId = 1,
                             ProductDescription = "16 Threats 4.5Ghz",
                             ProductName = "Intel Core I9",

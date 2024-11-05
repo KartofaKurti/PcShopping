@@ -36,7 +36,7 @@ namespace PcBuilder.Data.Models
 
         [Required]
         [MaxLength(MaxlengthImageUrl)]
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; } 
 
         [ForeignKey(nameof(Category))]
         public int CategoryId { get; set; }
@@ -44,6 +44,9 @@ namespace PcBuilder.Data.Models
 
         [ForeignKey(nameof(Manufacturer))]
         public int ManufacturerId { get; set; }
-        public virtual Manufacturer Manufacturer { get; set; } 
+        public virtual Manufacturer Manufacturer { get; set; }
+
+        [Required]
+        public bool IsDeleted { get; set; }
     }
 }

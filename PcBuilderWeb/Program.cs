@@ -6,6 +6,7 @@ using PcBuilder.Services.Data;
 using PcBuilder.Services.Data.Interfaces;
 using PcBuilder.Web.Infrastructure.Extensions;
 using PcBuilder.Web.Infrastructure.Extentions;
+using PcBuilder.Web.Infrastructure.Services;
 
 public class Program
 {
@@ -87,7 +88,13 @@ public class Program
 
         app.ApplyMigrations();
 
-        app.Run();
+		using (var scope = app.Services.CreateScope())
+		{
+			var services = scope.ServiceProvider;
+			DataSeeder.SeedRolesAndAdminAsync(services).GetAwaiter().GetResult();
+		}
+
+		app.Run();
 
 	   
     }
