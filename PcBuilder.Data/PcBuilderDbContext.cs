@@ -19,8 +19,9 @@ namespace PcBuilder.Data
         public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ApplicationUserProduct> ApplicationUsersProducts { get; set; }
+        public DbSet<OrderProduct> OrderProducts { get; set; }
 
-        public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
+		public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
             : base(options)
         {
         }
@@ -30,9 +31,23 @@ namespace PcBuilder.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ApplicationUserProduct>()
                 .HasKey(cr => new { cr.ApplicationUserId, cr.ProductId });
+            
+          
+            modelBuilder.Entity<OrderProduct>()
+	            .HasKey(op => new { op.OrderId, op.ProductId });
+
+            modelBuilder.Entity<OrderProduct>()
+	            .HasOne(op => op.Order)
+	            .WithMany(o => o.OrderProducts) 
+	            .HasForeignKey(op => op.OrderId);
+
+            modelBuilder.Entity<OrderProduct>()
+	            .HasOne(op => op.Product)
+	            .WithMany(p => p.OrderProducts)  
+	            .HasForeignKey(op => op.ProductId);
 
 
-            modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
+			modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
             modelBuilder.ApplyConfiguration(new CategoryEntityConfigurations());
             modelBuilder.ApplyConfiguration(new ProductEntityConfigurations());
         }

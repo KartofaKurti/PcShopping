@@ -10,19 +10,19 @@ namespace PcBuilder.Data.Models
 {
     public class Order
     {
-        [Key]
-        public Guid Id { get; set; } 
+		[Key]
+		public Guid Id { get; set; }
 
-        [Required]
-        public DateTime OrderDate { get; set; }
+		[Required]
+		public DateTime OrderDate { get; set; }
 
-        [Required]
-        public int ProductQuantity { get; set; }
+		[Required]
+		public int ProductQuantity { get; set; }
 
-        [Required]
-        public string Adress { get; set; }
+		[Required]
+		public string Address { get; set; }
 
-        public IEnumerable<Product> Product { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
-    }
+		public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>(); // Relationship to products
+		public ApplicationUser ApplicationUser { get; set; }
+	}
 }

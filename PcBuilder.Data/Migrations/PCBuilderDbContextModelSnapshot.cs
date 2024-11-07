@@ -324,7 +324,7 @@ namespace PcBuilder.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Adress")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -342,6 +342,21 @@ namespace PcBuilder.Data.Migrations
                     b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("PcBuilder.Data.Models.OrderProduct", b =>
+                {
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("OrderId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderProducts");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
@@ -370,9 +385,6 @@ namespace PcBuilder.Data.Migrations
                     b.Property<int>("ManufacturerId")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("ProductDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -396,15 +408,13 @@ namespace PcBuilder.Data.Migrations
 
                     b.HasIndex("ManufacturerId");
 
-                    b.HasIndex("OrderId");
-
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f9045b9d-81f5-4b68-a8da-a516f444f24e"),
-                            AddedOn = new DateTime(2024, 11, 5, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("8f271da5-4f64-4278-8414-c76811e15e4b"),
+                            AddedOn = new DateTime(2024, 11, 7, 0, 0, 0, 0, DateTimeKind.Local),
                             CategoryId = 1,
                             ImageUrl = "Balls",
                             IsDeleted = false,
@@ -497,6 +507,25 @@ namespace PcBuilder.Data.Migrations
                     b.Navigation("ApplicationUser");
                 });
 
+            modelBuilder.Entity("PcBuilder.Data.Models.OrderProduct", b =>
+                {
+                    b.HasOne("PcBuilder.Data.Models.Order", "Order")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PcBuilder.Data.Models.Product", "Product")
+                        .WithMany("OrderProducts")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
                 {
                     b.HasOne("PcBuilder.Data.Models.ApplicationUser", null)
@@ -514,10 +543,6 @@ namespace PcBuilder.Data.Migrations
                         .HasForeignKey("ManufacturerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("PcBuilder.Data.Models.Order", null)
-                        .WithMany("Product")
-                        .HasForeignKey("OrderId");
 
                     b.Navigation("Category");
 
@@ -541,7 +566,12 @@ namespace PcBuilder.Data.Migrations
 
             modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
                 {
-                    b.Navigation("Product");
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
+                {
+                    b.Navigation("OrderProducts");
                 });
 #pragma warning restore 612, 618
         }

@@ -48,5 +48,7 @@ namespace PcBuilder.Data.Models
 
         [Required]
         public bool IsDeleted { get; set; }
-    }
+
+        public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>(); 
+	}
 }
