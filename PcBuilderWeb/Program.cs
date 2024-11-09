@@ -47,8 +47,7 @@ public class Program
             .AddUserManager<UserManager<ApplicationUser>>()
             .AddDefaultTokenProviders();
 
-
-        builder.Services.ConfigureApplicationCookie(cfg =>
+		builder.Services.ConfigureApplicationCookie(cfg =>
         {
             cfg.LoginPath = "/User/Login";
             cfg.AccessDeniedPath = "/Home/Error/401";
@@ -99,3 +98,11 @@ public class Program
 	   
     }
 }
+
+
+
+
+
+
+
+

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PcBuilderWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b03b87d4a06bf779adbed78eba7d58bdb0afa70")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51d79d04365252be117c329a9692e074e3aade90")]
 [assembly: System.Reflection.AssemblyProductAttribute("PcBuilderWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PcBuilderWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

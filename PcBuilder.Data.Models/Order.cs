@@ -22,7 +22,7 @@ namespace PcBuilder.Data.Models
 		[Required]
 		public string Address { get; set; }
 
-		public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>(); // Relationship to products
+		public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
 		public ApplicationUser ApplicationUser { get; set; }
 	}
 }
