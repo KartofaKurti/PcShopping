@@ -22,7 +22,9 @@ namespace PcBuilder.Data.Models
 		[Required]
 		public string Address { get; set; }
 
+		[Required]
+		public decimal TotalPrice { get; set; } // New property for total price
+
 		public ICollection<OrderProduct> OrderProducts { get; set; } = new List<OrderProduct>();
-		public ApplicationUser ApplicationUser { get; set; }
 	}
 }

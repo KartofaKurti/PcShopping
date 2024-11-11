@@ -153,6 +153,21 @@ namespace PcBuilder.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("PcBuilder.Data.Models.AplicationUserOrder", b =>
+                {
+                    b.Property<Guid>("ApplicationUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ApplicationUserId", "OrderId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("AplicationUsersOrders");
+                });
+
             modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -236,6 +251,9 @@ namespace PcBuilder.Data.Migrations
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("ApplicationUserId", "ProductId");
 
@@ -328,31 +346,45 @@ namespace PcBuilder.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ApplicationUserId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ProductQuantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasIndex("ApplicationUserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.OrderProduct", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("OrderId", "ProductId");
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("ProductId");
 
@@ -413,8 +445,8 @@ namespace PcBuilder.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8f271da5-4f64-4278-8414-c76811e15e4b"),
-                            AddedOn = new DateTime(2024, 11, 7, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("d16c5f7c-9a95-4afe-8c5c-daa7eb876f10"),
+                            AddedOn = new DateTime(2024, 11, 11, 0, 0, 0, 0, DateTimeKind.Local),
                             CategoryId = 1,
                             ImageUrl = "Balls",
                             IsDeleted = false,
@@ -477,6 +509,25 @@ namespace PcBuilder.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PcBuilder.Data.Models.AplicationUserOrder", b =>
+                {
+                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PcBuilder.Data.Models.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUserProduct", b =>
                 {
                     b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
@@ -496,17 +547,6 @@ namespace PcBuilder.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
-                {
-                    b.HasOne("PcBuilder.Data.Models.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
-                });
-
             modelBuilder.Entity("PcBuilder.Data.Models.OrderProduct", b =>
                 {
                     b.HasOne("PcBuilder.Data.Models.Order", "Order")
@@ -516,7 +556,7 @@ namespace PcBuilder.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("PcBuilder.Data.Models.Product", "Product")
-                        .WithMany("OrderProducts")
+                        .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -565,11 +605,6 @@ namespace PcBuilder.Data.Migrations
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.Order", b =>
-                {
-                    b.Navigation("OrderProducts");
-                });
-
-            modelBuilder.Entity("PcBuilder.Data.Models.Product", b =>
                 {
                     b.Navigation("OrderProducts");
                 });
