@@ -20,5 +20,9 @@ namespace PcBuilder.Web.ViewModels.Product
 
 		public string ManufacturerName { get; set; }  
 		public string CategoryName { get; set; }
-	}
+
+		public int Quantity { get; set; }
+
+        public bool isDeleted { get; set; }
+    }
 }

@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\PcBuilderWeb.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\AddProduct.css",
+      "PackagePath": "staticwebassets\\css\\AddProduct.css"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\ProductDetails.css",
+      "PackagePath": "staticwebassets\\css\\ProductDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\ProductIndex.css",
+      "PackagePath": "staticwebassets\\css\\ProductIndex.css"
+    },
+    {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
     },
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\site.js",

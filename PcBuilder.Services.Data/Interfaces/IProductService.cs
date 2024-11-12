@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PcBuilder.Data.Models;
 using PcBuilder.Web.ViewModels.Product;
 
 namespace PcBuilder.Services.Data.Interfaces
@@ -13,6 +14,8 @@ namespace PcBuilder.Services.Data.Interfaces
 
         Task<bool> AddProductAsync(AddProductViewModel  product);
         Task<ProductDetailsViewModel?> GetProductDetailsByIdAsync(Guid id);
+        public Task<IEnumerable<Product>> GetAvailableProductsAsync();
+        Task<bool> ToggleProductVisibilityAsync(Guid productId);
 
     }
 }

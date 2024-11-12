@@ -11,20 +11,17 @@ public class OrderService : BaseService, IOrderService
 {
 	private readonly IRepository<Order, Guid> _orderRepository;
 	private readonly IRepository<Product, Guid> _productRepository;
-	private readonly UserManager<ApplicationUser> _userManager;
 	private readonly IRepository<AplicationUserOrder, object> _usersOrdersRepository;
 	private readonly IRepository<OrderProduct, Guid> _orderItemRepository; 
 
 	public OrderService(
 		IRepository<Order, Guid> orderRepository,
 		IRepository<Product, Guid> productRepository,
-		UserManager<ApplicationUser> userService,
 		IRepository<AplicationUserOrder, object> usersOrdersRepository,
 		IRepository<OrderProduct, Guid> orderItemRepository) 
 	{
 		_orderRepository = orderRepository;
 		_productRepository = productRepository;
-		_userManager = userService;
 		_usersOrdersRepository = usersOrdersRepository;
 		_orderItemRepository = orderItemRepository; 
 	}

@@ -11,10 +11,10 @@ namespace PcBuilder.Web.ViewModels.Order
 {
 	public class OrderViewModel
 	{
-		public string OrderId { get; set; }  // Changed to Guid to match Order entity
+		public string OrderId { get; set; }  
 
 		[Display(Name = "Order Date")]
-		public string OrderDate { get; set; }  // Changed to DateTime for accuracy
+		public string OrderDate { get; set; } 
 
 		public IEnumerable<ApplicationUserCartViewModel> CartItems { get; set; } = new List<ApplicationUserCartViewModel>();
 

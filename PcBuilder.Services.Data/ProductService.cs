@@ -42,6 +42,7 @@ namespace PcBuilder.Services.Data
 			        ManufacturerName = product.Manufacturer.ManufacturerName, 
 			        CategoryName = product.Category.CategoryName,
 					ImageUrl = product.ImageUrl ?? ImageNotFoundUrl,
+					Quantity = product.StockQuantity
 					
 		        })
 		        .ToListAsync();
@@ -103,5 +104,24 @@ namespace PcBuilder.Services.Data
 
 	        return viewModel;
 		}
+        public async Task<IEnumerable<Product>> GetAvailableProductsAsync()
+        {
+            return await _productRepository.GetAllAttached()
+                .Where(p => !p.IsDeleted)
+                .ToListAsync();
+        }
+
+        public async Task<bool> ToggleProductVisibilityAsync(Guid productId)
+        {
+            var product = await _productRepository.GetByIdAsync(productId);
+            if (product == null)
+            {
+                return false; 
+            }
+
+            product.IsDeleted = !product.IsDeleted;
+            await _productRepository.UpdateAsync(product);
+            return true;
+        }
     }
 }

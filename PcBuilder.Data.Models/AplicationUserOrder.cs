@@ -15,8 +15,6 @@ namespace PcBuilder.Data.Models
 
 		public virtual ApplicationUser ApplicationUser { get; set; } = null!;
 
-		
-
 	}
 
 }

@@ -20,8 +20,8 @@ namespace PcBuilderWeb.Controllers
 			this.productService = productService;
 		}
 
-
-		[HttpGet]
+        [AllowAnonymous]
+        [HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			IEnumerable<AllProductsIndexViewModel> allProducts =
@@ -46,7 +46,6 @@ namespace PcBuilderWeb.Controllers
 		{
 			if (!this.ModelState.IsValid)
 			{
-				// Render the same form with user entered values + model errors 
 				return this.View(inputModel);
 			}
 
@@ -54,7 +53,7 @@ namespace PcBuilderWeb.Controllers
 			if (result == false)
 			{
 				this.ModelState.AddModelError(nameof(inputModel.AddedOn),
-					String.Format("The Release Date must be in the following format: {0}", ReleaseDateFormat));
+					String.Format($"The Release Date must be in the following format: {ReleaseDateFormat}"));
 				return this.View(inputModel);
 			}
 
@@ -75,5 +74,17 @@ namespace PcBuilderWeb.Controllers
 			}
 			return View(productDetails);
 		}
-	}
+
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> ToggleProductVisibility(Guid productId)
+        {
+            bool isToggled = await productService.ToggleProductVisibilityAsync(productId);
+            if (!isToggled)
+            {
+                return NotFound(); 
+            }
+
+            return RedirectToAction("Index"); 
+        }
+    }
 }

@@ -134,7 +134,6 @@ namespace PcBuilder.Services.Data
 				.Include(c => c.Product)
 				.ToListAsync();
 
-			// Calculate the total price based on the price and quantity
 			decimal totalPrice = cartItems.Sum(ci => ci.Product.ProductPrice * ci.Quantity);
 
 			return totalPrice;

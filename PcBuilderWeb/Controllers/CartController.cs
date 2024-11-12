@@ -59,6 +59,7 @@ namespace PcBuilderWeb.Controllers
                 .AddProductToUserCarttAsync(productId, userId);
             return RedirectToAction(nameof(Index));
         }
+
         [Authorize(Roles = "USER")]
 		[HttpPost]
         public async Task<IActionResult> RemoveFromCart(string? productId)

@@ -17,7 +17,7 @@ namespace PcBuilder.Web.Infrastructure.Services
 			var roleManager = services.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
 			var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
-			string[] roleNames = { "Admin", "User" };
+			string[] roleNames = { "ADMIN", "USER" };
 
 			foreach (var roleName in roleNames)
 			{

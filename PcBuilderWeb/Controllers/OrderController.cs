@@ -21,17 +21,17 @@ namespace PcBuilderWeb.Controllers
 	public class OrderController : Controller
 	{
 		private readonly ICartService _cartService;
-		private readonly UserManager<ApplicationUser> _userManager;
 		private readonly IOrderService _orderService;
 
-		public OrderController(ICartService cartService, UserManager<ApplicationUser> userManager, IOrderService orderRepository)
+		public OrderController(ICartService cartService,
+            IOrderService orderRepository)
 		{
 			_cartService = cartService;
-			_userManager = userManager;
 			_orderService = orderRepository;
 		}
 
-		[HttpGet]
+        [Authorize(Roles = "ADMIN")]
+        [HttpGet]
 		public async Task<IActionResult> Index()
 		{
 			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -54,7 +54,7 @@ namespace PcBuilderWeb.Controllers
             return View(orderDetails); 
         }
 
-
+        [Authorize(Roles = "USER")]
         [HttpGet]
 		public async Task<IActionResult> CreateOrder()
 		{
@@ -74,6 +74,7 @@ namespace PcBuilderWeb.Controllers
 			return View(orderViewModel);
 		}
 
+		[Authorize(Roles = "USER")]
 		[HttpPost]
 		public async Task<IActionResult> CreateOrder(OrderViewModel orderViewModel)
 		{
