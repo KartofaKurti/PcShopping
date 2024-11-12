@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZabpVYXCLvHzBG6gyJnpyA4FMK1qM1wTDdehNUIG9f8n8WqggdKSu8YR9TQa78fCZuoQdk2dmRanAaL2iu+qWg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilder.Service.Mapping\\PcBuilder.Service.Mapping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Kartof\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Kartof\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Kartof\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

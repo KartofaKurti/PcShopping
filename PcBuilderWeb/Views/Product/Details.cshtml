@@ -1,0 +1,14 @@
+﻿@using PcBuilder.Web.ViewModels.Product
+@model PcBuilder.Web.ViewModels.Product.ProductDetailsViewModel
+
+<h2>@Model.ProductName</h2>
+
+<img src="@Model.ImageUrl" alt="@Model.ProductName" />
+<p><strong>Price:</strong> @Model.ProductPrice</p>
+<p><strong>Category:</strong> @Model.Category</p>
+<p><strong>AddedOn:</strong> @Model.AddedOn</p>
+<p><strong>Quantity:</strong> @Model.StockQuantity</p>
+<p><strong>Manufacturer:</strong> @Model.ManufacturerName</p>
+<p><strong>Description:</strong> @Model.ProductDescription</p>
+
+<a asp-action="Index" class="btn btn-primary">Back to All Products</a>

@@ -1,0 +1,13 @@
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.csproj.AssemblyReference.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.AssemblyInfoInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.AssemblyInfo.cs
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.csproj.CoreCompileInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.sourcelink.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\bin\Debug\net8.0\PcBuilder.Service.Mapping.deps.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\bin\Debug\net8.0\PcBuilder.Service.Mapping.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\bin\Debug\net8.0\PcBuilder.Service.Mapping.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\refint\PcBuilder.Service.Mapping.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\PcBuilder.Service.Mapping.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Service.Mapping\obj\Debug\net8.0\ref\PcBuilder.Service.Mapping.dll

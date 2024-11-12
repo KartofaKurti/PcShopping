@@ -1,0 +1,61 @@
+﻿@model PcBuilder.Web.ViewModels.Cart.CartViewModel
+
+@{
+	ViewData["Title"] = "Cart";
+}
+
+<h2>Your Cart</h2>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th>Image</th>
+		<th>Product Name</th>
+		<th>Product Price</th>
+		<th>Added On</th>
+		<th>Manufacturer</th>
+		<th>Category</th>
+		<th>Action</th> 
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var product in Model.Items) 
+	{
+		<tr>
+			<td>
+				<img src="@product.ImageUrl" alt="@product.ProductName" width="100" />
+			</td>
+			<td>
+				@product.ProductName
+				@if (product.Quantity > 1)
+				{
+					<p>x @product.Quantity</p>
+				}
+			</td> 
+			<td>@product.ProductPrice.ToString("C")</td> 
+			<td>@product.AddedOn</td>
+			<td>@product.Manufacturer</td>
+			<td>@product.Category</td>
+			<td>
+				<form asp-controller="Cart" asp-action="RemoveFromCart" method="post" class="d-inline">
+					<input type="hidden" name="productId" value="@product.ProductId" />
+					<button type="submit" class="btn btn-primary">Remove From Cart</button>
+				</form>
+			</td>
+		</tr>
+	}
+	</tbody>
+</table>
+
+<h3>Total Price: @Model.TotalPrice.ToString("C")</h3> 
+
+@if (Model.Items.Count > 0)
+{
+	<form asp-controller="Order" asp-action="CreateOrder" method="get" class="d-inline">
+		<button type="submit" class="btn btn-success">Order Now</button>
+	</form>
+}
+else
+{
+	<p>No Items In Cart!</p>
+}

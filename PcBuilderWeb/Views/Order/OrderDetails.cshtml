@@ -1,0 +1,29 @@
+﻿@model PcBuilder.Web.ViewModels.Order.OrderDetailsViewModel
+
+@{
+	ViewData["Title"] = "Order Details";
+}
+
+<div class="container mt-4">
+	<h2 class="text-center">Order Details</h2>
+
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Order ID: @Model.OrderId</h5>
+			<p><strong>Order Date:</strong> @Model.OrderDate.ToString("MMMM dd, yyyy")</p>
+			<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+			<p><strong>Address:</strong> @Model.Address</p>
+			<p><strong>Product Quantity:</strong> @Model.ProductQuantity</p>
+		</div>
+	</div>
+
+	<h4 class="mt-4">Order Items:</h4>
+	<div class="list-group">
+		@foreach (var item in Model.OrderItems)
+		{
+			<div class="list-group-item">
+				<strong>@item.ProductName</strong> - Quantity: @item.Quantity, Price: @item.ProductPrice.ToString("C")
+			</div>
+		}
+	</div>
+</div>

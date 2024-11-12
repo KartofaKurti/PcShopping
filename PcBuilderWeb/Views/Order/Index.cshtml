@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PcBuilder.Web.ViewModels.Order.OrderDetailsViewModel>
+
+@{
+	ViewData["Title"] = "Order History";
+}
+
+<div class="container mt-4">
+	<h2 class="text-center">Order History</h2>
+
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered table-hover">
+			<thead class="thead-dark">
+			<tr>
+				<th scope="col">Order ID</th>
+				<th scope="col">User Name</th>
+				<th scope="col">Order Date</th>
+				<th scope="col">Product Quantity</th>
+				<th scope="col">Total Price</th>
+				<th scope="col">Address</th>
+				<th scope="col">Action</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var order in Model)
+			{
+				<tr>
+					<td>@order.OrderId</td>
+					<th>@order.UserName</th>
+					<td>@order.OrderDate.ToString("MMMM dd, yyyy")</td>
+					<td>@order.ProductQuantity</td>
+					<td>@order.TotalPrice.ToString("C")</td>
+					<td>@order.Address</td>
+					<td>
+						<a href="@Url.Action("OrderDetails", "Order", new { orderId = order.OrderId })" class="btn btn-info btn-sm">
+							View Order Items
+						</a>
+					</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
+</div>

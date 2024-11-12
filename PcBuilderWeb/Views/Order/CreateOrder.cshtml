@@ -1,0 +1,34 @@
+﻿@model PcBuilder.Web.ViewModels.Order.OrderViewModel
+
+<h2>Review Your Order</h2>
+
+<form method="post">
+	<div>
+		<h4>Your Cart:</h4>
+		<ul>
+			@if (Model.CartItems != null && Model.CartItems.Any())
+			{
+				@foreach (var item in Model.CartItems)
+				{
+					<li>@item.ProductName - @item.ProductPrice.ToString("C") - Quantity: @item.Quantity</li>
+				}
+			}
+			else
+			{
+				<li>No items in your cart.</li>
+			}
+		</ul>
+	</div>
+
+	<div>
+		<label for="Address">Shipping Address:</label>
+		<textarea id="Address" name="Address" required>@Model.Address</textarea>
+	</div>
+
+	<button type="submit" class="btn btn-success">Place Order</button>
+</form>
+
+<div>
+	<p><strong>Total Quantity:</strong> @Model.ProductQuantity</p>
+	<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+</div>
