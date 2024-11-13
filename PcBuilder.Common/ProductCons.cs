@@ -1,4 +1,6 @@
-﻿namespace PcBuilder.Common
+﻿using System.Security.Policy;
+
+namespace PcBuilder.Common
 {
     public class ProductCons
     {
@@ -25,7 +27,14 @@
     public class DateValidation()
     {
 	    public const string ReleaseDateFormat = "MM/yyyy";
-	}
+    }
+
+    public class RolesValidation()
+    {
+        public const string AdminRole = "ADMIN";
+        public const string UserRole = "USER";
+    }
+    
 
 
 }

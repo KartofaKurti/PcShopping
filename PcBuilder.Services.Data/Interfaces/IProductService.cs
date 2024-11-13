@@ -16,6 +16,9 @@ namespace PcBuilder.Services.Data.Interfaces
         Task<ProductDetailsViewModel?> GetProductDetailsByIdAsync(Guid id);
         public Task<IEnumerable<Product>> GetAvailableProductsAsync();
         Task<bool> ToggleProductVisibilityAsync(Guid productId);
+        public Task<bool> HardDeleteProductAsync(Guid id);
+        public Task<bool> EditProductAsync(EditProductViewModel model);
+        public Task<Product?> GetProductByIdAsync(Guid id);
 
     }
 }

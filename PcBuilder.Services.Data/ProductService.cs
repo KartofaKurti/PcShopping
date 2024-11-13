@@ -14,6 +14,7 @@ using PcBuilder.Web.ViewModels.Product;
 using Manufacturer = PcBuilder.Data.Models.Enums.ManufacturerType;
 using static PcBuilder.Common.DateValidation;
 using static PcBuilder.Common.ProductValidation;
+using PcBuilder.Data.Models.Enums;
 
 namespace PcBuilder.Services.Data
 {
@@ -42,7 +43,9 @@ namespace PcBuilder.Services.Data
 			        ManufacturerName = product.Manufacturer.ManufacturerName, 
 			        CategoryName = product.Category.CategoryName,
 					ImageUrl = product.ImageUrl ?? ImageNotFoundUrl,
-					Quantity = product.StockQuantity
+					Quantity = product.StockQuantity,
+					isDeleted = product.IsDeleted,
+					
 					
 		        })
 		        .ToListAsync();
@@ -80,30 +83,37 @@ namespace PcBuilder.Services.Data
 
         public async Task<ProductDetailsViewModel?> GetProductDetailsByIdAsync(Guid id)
         {
-	        Product? product = await _productRepository
-		        .GetAllAttached()
-		        .Include(p => p.Manufacturer)
-		        .Include(p => p.Category)
-		        .FirstOrDefaultAsync(p => p.Id == id); 
+            Product? product = await GetProductByIdAsync(id); // Reuse the method
 
-	        ProductDetailsViewModel? viewModel = null;
-	        if (product != null)
-	        {
-		        viewModel = new ProductDetailsViewModel
-		        {
-			        ProductName = product.ProductName,
-			        ProductDescription = product.ProductDescription,
-			        ProductPrice = product.ProductPrice,
-			        StockQuantity = product.StockQuantity,
-			        AddedOn = product.AddedOn.ToString(ReleaseDateFormat),
-			        ImageUrl = product.ImageUrl,
-			        ManufacturerName = product.Manufacturer?.ManufacturerName, 
-			        Category = product.Category?.CategoryName 
-		        };
-	        }
+            ProductDetailsViewModel? viewModel = null;
+            if (product != null)
+            {
+                viewModel = new ProductDetailsViewModel
+                {
+                    Id = product.Id.ToString(),
+                    ProductName = product.ProductName,
+                    ProductDescription = product.ProductDescription,
+                    ProductPrice = product.ProductPrice,
+                    StockQuantity = product.StockQuantity,
+                    AddedOn = product.AddedOn.ToString(ReleaseDateFormat),
+                    ImageUrl = product.ImageUrl,
+                    ManufacturerName = product.Manufacturer?.ManufacturerName,
+                    Category = product.Category?.CategoryName
+                };
+            }
 
-	        return viewModel;
-		}
+            return viewModel;
+        }
+
+        public async Task<Product?> GetProductByIdAsync(Guid id)
+        {
+            return await _productRepository
+                .GetAllAttached()  
+                .Include(p => p.Manufacturer)
+                .Include(p => p.Category)
+                .FirstOrDefaultAsync(p => p.Id == id);
+        }
+
         public async Task<IEnumerable<Product>> GetAvailableProductsAsync()
         {
             return await _productRepository.GetAllAttached()
@@ -120,6 +130,37 @@ namespace PcBuilder.Services.Data
             }
 
             product.IsDeleted = !product.IsDeleted;
+            await _productRepository.UpdateAsync(product);
+            return true;
+        }
+
+        public async Task<bool> HardDeleteProductAsync(Guid id)
+        {
+            var product = await _productRepository.GetByIdAsync(id);
+            if (product == null)
+            {
+                return false;
+            }
+
+            await _productRepository.DeleteAsync(product);
+            return true;
+        }
+
+        public async Task<bool> EditProductAsync(EditProductViewModel model)
+        {
+            var product = await GetProductByIdAsync(Guid.Parse(model.Id));
+
+            if (product == null)
+            {
+                return false;
+            }
+
+            product.ProductName = model.ProductName;
+            product.ProductDescription = model.ProductDescription;
+            product.ProductPrice = model.ProductPrice;
+            product.StockQuantity = model.StockQuantity;
+            product.ImageUrl = model.ImageUrl;
+
             await _productRepository.UpdateAsync(product);
             return true;
         }

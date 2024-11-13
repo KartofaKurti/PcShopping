@@ -5,12 +5,14 @@
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
     .product-details-container h2 {
         color: #333;
         margin-bottom: 15px;
         font-weight: 600;
+        font-size: 1.5rem;
     }
 
     .product-details-container img {
@@ -18,24 +20,89 @@
         height: auto;
         border-radius: 4px;
         margin-bottom: 15px;
+        object-fit: cover;
     }
 
     .product-details-container p {
         font-size: 1.1rem;
         color: #555;
         margin: 8px 0;
+        line-height: 1.6;
     }
 
-    .product-details-container .btn {
-        background-color: #007bff;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-top: 15px;
-        display: inline-block;
+
+.btn {
+    height: 50px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    min-width: 150px; 
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
     }
 
-        .product-details-container .btn:hover {
-            background-color: #0056b3;
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+    .product-details-container {
+        padding: 15px;
+    }
+
+        .product-details-container h2 {
+            font-size: 1.3rem;
         }
+
+        .product-details-container p {
+            font-size: 1rem;
+        }
+}
+
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}

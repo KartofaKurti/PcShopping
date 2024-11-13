@@ -1,10 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using PcBuilder.Web.ViewModels.Product
+@using static PcBuilder.Common.RolesValidation;
 <link rel="stylesheet" href="~/css/ProductIndex.css" />
 
 <div class="container">
     <h2>All Products</h2>
-    @if (User.IsInRole("ADMIN"))
+    @if (User.IsInRole(AdminRole))
     {
         <div class="add-product-btn mb-3">
             <a asp-action="AddProduct" class="btn btn-primary btn-block">Add New Product</a>
@@ -43,7 +44,7 @@
 
 			            @if (product.Quantity > 0)
 			            {
-				            @if (User.Identity.IsAuthenticated && User.IsInRole("USER"))
+				            @if (User.Identity.IsAuthenticated && User.IsInRole(UserRole))
 				            {
 					            <form asp-controller="Cart" asp-action="AddToCart" method="post" class="d-inline">
 						            <input type="hidden" name="productId" value="@product.Id" />
@@ -53,10 +54,13 @@
 			            }
 			            else
 			            {
-				            <span class="out-of-stock">Out of Stock!</span>
+							@if (!User.IsInRole(AdminRole))
+							{
+								<span class="out-of-stock">Out of Stock!</span>
+							}
 			            }
 
-			            @if (User.IsInRole("ADMIN"))
+			            @if (User.IsInRole(AdminRole))
 			            {
 				            
 				            if (product.isDeleted)

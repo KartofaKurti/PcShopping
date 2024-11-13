@@ -14,6 +14,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using static PcBuilder.Common.DateValidation;
+using static PcBuilder.Common.RolesValidation;
 
 namespace PcBuilderWeb.Controllers
 {
@@ -30,7 +31,7 @@ namespace PcBuilderWeb.Controllers
 			_orderService = orderRepository;
 		}
 
-        [Authorize(Roles = "ADMIN")]
+        [Authorize(Roles = AdminRole)]
         [HttpGet]
 		public async Task<IActionResult> Index()
 		{
@@ -54,7 +55,7 @@ namespace PcBuilderWeb.Controllers
             return View(orderDetails); 
         }
 
-        [Authorize(Roles = "USER")]
+        [Authorize(Roles = UserRole)]
         [HttpGet]
 		public async Task<IActionResult> CreateOrder()
 		{
@@ -74,7 +75,7 @@ namespace PcBuilderWeb.Controllers
 			return View(orderViewModel);
 		}
 
-		[Authorize(Roles = "USER")]
+		[Authorize(Roles = UserRole)]
 		[HttpPost]
 		public async Task<IActionResult> CreateOrder(OrderViewModel orderViewModel)
 		{

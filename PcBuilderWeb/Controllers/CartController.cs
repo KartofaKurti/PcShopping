@@ -11,6 +11,7 @@ using PcBuilder.Web.ViewModels.Cart;
 using PcBuilder.Web.ViewModels.Product;
 using System.Security.Claims;
 using static PcBuilder.Common.DateValidation;
+using static PcBuilder.Common.RolesValidation;
 
 namespace PcBuilderWeb.Controllers
 {
@@ -27,7 +28,7 @@ namespace PcBuilderWeb.Controllers
 			this.userManager = userManager;
 		}
 
-		[Authorize(Roles = "USER")]
+		[Authorize(Roles = UserRole)]
 		[HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -45,7 +46,7 @@ namespace PcBuilderWeb.Controllers
 			return View(cartViewModel);
 		}
 
-        [Authorize(Roles = "USER")]
+        [Authorize(Roles = UserRole)]
 		[HttpPost]
         public async Task<IActionResult> AddToCart(string? productId)
         {
@@ -60,7 +61,7 @@ namespace PcBuilderWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [Authorize(Roles = "USER")]
+        [Authorize(Roles = UserRole)]
 		[HttpPost]
         public async Task<IActionResult> RemoveFromCart(string? productId)
         {

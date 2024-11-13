@@ -32,7 +32,7 @@
 					<p>x @product.Quantity</p>
 				}
 			</td> 
-			<td>@product.ProductPrice.ToString("C")</td> 
+			<td>@product.ProductPrice.ToString()</td> 
 			<td>@product.AddedOn</td>
 			<td>@product.Manufacturer</td>
 			<td>@product.Category</td>
@@ -47,7 +47,7 @@
 	</tbody>
 </table>
 
-<h3>Total Price: @Model.TotalPrice.ToString("C")</h3> 
+<h3>Total Price: @Model.TotalPrice.ToString()</h3> 
 
 @if (Model.Items.Count > 0)
 {

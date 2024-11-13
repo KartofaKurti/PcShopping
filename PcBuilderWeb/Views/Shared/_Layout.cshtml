@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using static PcBuilder.Common.RolesValidation;
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -30,13 +33,13 @@
 		                <li class="nav-item">
 			                <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Products</a>
 		                </li>
-                        @if(!User.IsInRole("ADMIN"))
+                        @if(!User.IsInRole(AdminRole))
                         {
 	                        <li class="nav-item">
 		                        <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">My Cart</a>
 	                        </li>
                         }
-		                @if(User.IsInRole("ADMIN"))
+		                @if(User.IsInRole(AdminRole))
 		                {
 			                <li class="nav-item">
 				                <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
