@@ -90,25 +90,6 @@ namespace PcBuilderWeb.Controllers
         }
 
         [Authorize(Roles = "ADMIN")]
-        [HttpDelete("api/products/{id}")]
-        public async Task<IActionResult> HardDelete(Guid id)
-        {
-            var product = await productService.GetProductDetailsByIdAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            bool deleted = await productService.HardDeleteProductAsync(id);
-            if (!deleted)
-            {
-                return StatusCode(500, "Error deleting the product.");
-            }
-
-            return Ok();
-        }
-
-        [Authorize(Roles = "ADMIN")]
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
         {

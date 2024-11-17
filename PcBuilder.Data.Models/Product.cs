@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PcBuilder.Data.Models.Enums;
-using static PcBuilder.Common.ProductCons;
+using static PcBuilder.Common.ProductValidation;
 
 
 namespace PcBuilder.Data.Models

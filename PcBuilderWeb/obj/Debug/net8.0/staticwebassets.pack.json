@@ -21,8 +21,20 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\hardDelete.js",
+      "PackagePath": "staticwebassets\\js\\hardDelete.js"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productVisibility.js",
+      "PackagePath": "staticwebassets\\js\\productVisibility.js"
     },
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\site.js",

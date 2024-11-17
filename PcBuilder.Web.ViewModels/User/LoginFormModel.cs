@@ -9,17 +9,18 @@ namespace PcBuilder.Web.ViewModels.User
 {
     public class LoginFormModel
     {
-        [Required]
-        [EmailAddress]
-		public string Email { get; set; } 
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email address.")]
+        public string Email { get; set; } = null!;
 
-        [Required]
+        [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
-        public string Password { get; set; }
+        public string Password { get; set; } = null!;
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
 
+        [Url(ErrorMessage = "Invalid return URL format.")]
         public string? ReturnUrl { get; set; }
-	}
+    }
 }

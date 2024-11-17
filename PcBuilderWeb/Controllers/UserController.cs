@@ -25,25 +25,33 @@ namespace PcBuilderWeb.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register(RegisterFormModel model)
 		{
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-			var result = await _userService.RegisterUserAsync(model);
-			if (result.Succeeded)
-			{
-				await _userService.LoginUserAsync(new LoginFormModel { Email = model.Email, Password = model.Password });
-				return RedirectToAction("Index", "Home"); 
-			}
+            try
+            {
+                var result = await _userService.RegisterUserAsync(model);
+                if (result.Succeeded)
+                {
+                    await _userService.LoginUserAsync(new LoginFormModel { Email = model.Email, Password = model.Password });
+                    return RedirectToAction("Index", "Home");
+                }
 
-			foreach (var error in result.Errors)
-			{
-				ModelState.AddModelError(string.Empty, error.Description);
-			}
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred during registration. Please try again later.");
+                Console.WriteLine($"Error: {ex.Message}");
+            }
 
-			return View(model);
-		}
+            return View(model);
+        }
 
 		[HttpGet]
 		public IActionResult Login()
@@ -51,34 +59,55 @@ namespace PcBuilderWeb.Controllers
 			return View();
 		}
 
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Login(LoginFormModel model)
 		{
-			if (!ModelState.IsValid)
-			{
-				return View(model);
-			}
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-			bool isSuccess = await _userService.LoginUserAsync(model);
-			if (isSuccess)
-			{
-				return RedirectToAction("Index", "Home"); 
-			}
-			else
-			{
-				ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-				return View(model);
-			}
-		}
+            try
+            {
+                bool isSuccess = await _userService.LoginUserAsync(model);
+                if (isSuccess)
+                {
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+                    {
+                        return Redirect(model.ReturnUrl);
+                    }
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, "An error occurred during login. Please try again later.");
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            return View(model);
+        }
+
 
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Logout()
 		{
-			await _userService.LogoutUserAsync();
-			TempData["SuccessMessage"] = "You have successfully logged out.";
-			return RedirectToAction("Index", "Home"); 
-		}
+            try
+            {
+                await _userService.LogoutUserAsync();
+                TempData["SuccessMessage"] = "You have successfully logged out.";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "An error occurred during logout.";
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
 	}
 }

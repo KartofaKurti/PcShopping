@@ -1,108 +1,50 @@
-﻿.product-details-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+﻿.product-details {
+    margin-top: 2rem;
 }
 
-    .product-details-container h2 {
-        color: #333;
-        margin-bottom: 15px;
-        font-weight: 600;
-        font-size: 1.5rem;
-    }
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    .product-details-container img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-        margin-bottom: 15px;
-        object-fit: cover;
-    }
+.product-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
 
-    .product-details-container p {
-        font-size: 1.1rem;
-        color: #555;
-        margin: 8px 0;
-        line-height: 1.6;
-    }
+.product-price {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: bold;
+}
 
+.actions {
+    display: flex;
+    gap: 1rem;
+}
 
 .btn {
-    height: 50px;
-    padding: 0 20px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    min-width: 150px; 
-    text-align: center;
-    margin-top: 15px;
 }
 
-
-.btn-primary {
-    background-color: #007bff;
-    color: white;
-}
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
-
-.btn-danger {
+.modal .modal-header {
     background-color: #dc3545;
     color: white;
 }
 
-    .btn-danger:hover {
-        background-color: #c82333;
-    }
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
+.modal-footer .btn-danger {
+    background-color: #dc3545;
 }
 
-    .btn-secondary:hover {
-        background-color: #5a6268;
-    }
-
-
-.btn:hover {
-    transform: translateY(-2px);
+.product-details .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.btn:active {
-    background-color: #004085;
-    transform: translateY(0);
-}
-
-
-@media (max-width: 768px) {
-    .product-details-container {
-        padding: 15px;
-    }
-
-        .product-details-container h2 {
-            font-size: 1.3rem;
-        }
-
-        .product-details-container p {
-            font-size: 1rem;
-        }
-}
-
-
-.mt-4 {
-    margin-top: 1.5rem;
-}
-
-.mt-3 {
-    margin-top: 1rem;
+.product-details button {
+    width: 100%;
+    max-width: 200px;
 }

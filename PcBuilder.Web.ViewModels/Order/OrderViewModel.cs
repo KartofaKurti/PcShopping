@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static PcBuilder.Common.DateValidation;
+using static PcBuilder.Common.OrderValidation;
 
 namespace PcBuilder.Web.ViewModels.Order
 {
@@ -25,8 +26,8 @@ namespace PcBuilder.Web.ViewModels.Order
 		[DataType(DataType.Currency)]
 		public decimal TotalPrice { get; set; }
 
-		[Required(ErrorMessage = "Please enter a shipping address.")]
-		[StringLength(200, ErrorMessage = "Address cannot exceed 200 characters.")]
+		[Required(ErrorMessage = MissingAddress)]
+		[StringLength(MaxLenghtAdress, ErrorMessage = AddressError)]
 		public string Address { get; set; } = string.Empty;
 	}
 }
