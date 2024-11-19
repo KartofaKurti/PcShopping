@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PmR90dGEGdj+3amdqSPftov4+O2i+spEPtl7vNcH7Y4=",
+  "Source": "PcBuilder.WebApi",
+  "BasePath": "_content/PcBuilder.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

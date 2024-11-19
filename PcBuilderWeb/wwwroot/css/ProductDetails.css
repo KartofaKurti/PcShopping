@@ -1,50 +1,51 @@
-﻿.product-details {
-    margin-top: 2rem;
-}
-
-.product-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.product-title {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.product-price {
-    font-size: 1.5rem;
-    color: #28a745;
-    font-weight: bold;
-}
-
-.actions {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    border-radius: 5px;
-}
-
-.modal .modal-header {
-    background-color: #dc3545;
-    color: white;
-}
-
-.modal-footer .btn-danger {
-    background-color: #dc3545;
-}
-
-.product-details .actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.product-details button {
+﻿.custom-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 200px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    z-index: 1000;
 }
+
+.custom-modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* Center vertically */
+    padding: 20px;
+    border-radius: 8px;
+    width: 40%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.custom-modal-actions {
+    margin-top: 1rem;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+    .btn-secondary:hover, .btn-danger:hover {
+        opacity: 0.8;
+    }

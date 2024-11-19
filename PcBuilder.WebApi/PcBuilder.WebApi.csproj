@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PcBuilder.Common\PcBuilder.Common.csproj" />
+    <ProjectReference Include="..\PcBuilder.Services.Data\PcBuilder.Services.Data.csproj" />
+    <ProjectReference Include="..\PcBuilder.Web.Infrastructure\PcBuilder.Web.Infrastructure.csproj" />
+    <ProjectReference Include="..\PcBuilder.Web.ViewModels\PcBuilder.Web.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

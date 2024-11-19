@@ -1,10 +1,9 @@
 ﻿document.querySelectorAll('.toggleVisibility').forEach(button => {
     button.addEventListener('click', function (event) {
         event.preventDefault();
-
         const productId = this.getAttribute('data-product-id');
-
-        fetch(`/api/products/togglevisibility/${productId}`, {
+        console.log(productId);
+        fetch(`/api/ProductApi/togglevisibility/${productId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -24,11 +24,17 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Services.Data.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Services.Data.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Common.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.Models.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Service.Mapping.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Services.Data.Models.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Web.ViewModels.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Common.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.Models.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Service.Mapping.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Services.Data.Models.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\PcBuilder.Services.Data.csproj.AssemblyReference.cache
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\PcBuilder.Services.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\PcBuilder.Services.Data.AssemblyInfoInputs.cache
@@ -41,9 +47,3 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\PcBuilder.Services.Data.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\PcBuilder.Services.Data.genruntimeconfig.cache
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\obj\Debug\net8.0\ref\PcBuilder.Services.Data.dll
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.dll
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Web.ViewModels.dll
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Data.pdb
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Service.Mapping.dll
-C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Data\bin\Debug\net8.0\PcBuilder.Service.Mapping.pdb
