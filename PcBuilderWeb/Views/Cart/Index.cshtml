@@ -1,61 +1,45 @@
 ﻿@model PcBuilder.Web.ViewModels.Cart.CartViewModel
 
 @{
-	ViewData["Title"] = "Cart";
+	ViewData["Title"] = "Your Cart";
 }
 
-<h2>Your Cart</h2>
+<h2 class="text-center mb-4">Your Cart</h2>
 
-<table class="table table-striped">
-	<thead>
-	<tr>
-		<th>Image</th>
-		<th>Product Name</th>
-		<th>Product Price</th>
-		<th>Added On</th>
-		<th>Manufacturer</th>
-		<th>Category</th>
-		<th>Action</th> 
-	</tr>
-	</thead>
-	<tbody>
+<div class="cart-items">
 	@foreach (var product in Model.Items) 
 	{
-		<tr>
-			<td>
-				<img src="@product.ImageUrl" alt="@product.ProductName" width="100" />
-			</td>
-			<td>
-				@product.ProductName
-				@if (product.Quantity > 1)
-				{
-					<p>x @product.Quantity</p>
-				}
-			</td> 
-			<td>@product.ProductPrice.ToString()</td> 
-			<td>@product.AddedOn</td>
-			<td>@product.Manufacturer</td>
-			<td>@product.Category</td>
-			<td>
-				<form asp-controller="Cart" asp-action="RemoveFromCart" method="post" class="d-inline">
-					<input type="hidden" name="productId" value="@product.ProductId" />
-					<button type="submit" class="btn btn-primary">Remove From Cart</button>
-				</form>
-			</td>
-		</tr>
+		<div class="cart-item card mb-3">
+			<div class="row g-0">
+				<div class="col-md-3">
+					<img src="@product.ImageUrl" alt="@product.ProductName" class="img-fluid rounded-start cart-item-img" />
+				</div>
+				<div class="col-md-9">
+					<div class="card-body">
+						<h5 class="card-title">@product.ProductName</h5>
+						<p><strong>Price:</strong> @product.ProductPrice.ToString("C")</p>
+						<form asp-controller="Cart" asp-action="RemoveFromCart" method="post" class="d-inline">
+							<input type="hidden" name="productId" value="@product.ProductId" />
+							<button type="submit" class="btn btn-danger">Remove from Cart</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 	}
-	</tbody>
-</table>
+</div>
 
-<h3>Total Price: @Model.TotalPrice.ToString()</h3> 
+<h3 class="text-center mt-4">Total Price: @Model.TotalPrice.ToString("C")</h3>
 
 @if (Model.Items.Count > 0)
 {
-	<form asp-controller="Order" asp-action="CreateOrder" method="get" class="d-inline">
-		<button type="submit" class="btn btn-success">Order Now</button>
-	</form>
+	<div class="text-center mt-4">
+		<form asp-controller="Order" asp-action="CreateOrder" method="get">
+			<button type="submit" class="btn btn-success">Proceed to Checkout</button>
+		</form>
+	</div>
 }
 else
 {
-	<p>No Items In Cart!</p>
+	<p class="text-center mt-4">No Items in Cart!</p>
 }

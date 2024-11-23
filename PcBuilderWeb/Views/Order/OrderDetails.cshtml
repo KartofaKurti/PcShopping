@@ -3,26 +3,41 @@
 @{
 	ViewData["Title"] = "Order Details";
 }
-
+<link rel="stylesheet" href="~/css/OrderDetails.css" />
+<link rel="stylesheet" href="~/css/site.css" />
 <div class="container mt-4">
-	<h2 class="text-center">Order Details</h2>
+	<h2 class="text-center mb-4">Order Details</h2>
 
-	<div class="card">
+	<div class="card shadow-lg border-0">
 		<div class="card-body">
-			<h5 class="card-title">Order ID: @Model.OrderId</h5>
-			<p><strong>Order Date:</strong> @Model.OrderDate.ToString("MMMM dd, yyyy")</p>
-			<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
-			<p><strong>Address:</strong> @Model.Address</p>
-			<p><strong>Product Quantity:</strong> @Model.ProductQuantity</p>
+			<h5 class="card-title text-primary font-weight-bold">Order ID: @Model.OrderId</h5>
+			<div class="row mt-3">
+				<div class="col-md-6 mb-3">
+					<p><strong>Order Date:</strong> @Model.OrderDate.ToString("MMMM dd, yyyy")</p>
+				</div>
+				<div class="col-md-6 mb-3">
+					<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+				</div>
+				<div class="col-md-6 mb-3">
+					<p><strong>Address:</strong> @Model.Address</p>
+				</div>
+				<div class="col-md-6 mb-3">
+					<p><strong>Product Quantity:</strong> @Model.ProductQuantity</p>
+				</div>
+			</div>
 		</div>
 	</div>
 
-	<h4 class="mt-4">Order Items:</h4>
-	<div class="list-group">
+	<h4 class="mt-5 mb-3 text-secondary font-weight-bold">Order Items</h4>
+	<div class="list-group shadow">
 		@foreach (var item in Model.OrderItems)
 		{
-			<div class="list-group-item">
-				<strong>@item.ProductName</strong> - Quantity: @item.Quantity, Price: @item.ProductPrice.ToString("C")
+			<div class="list-group-item d-flex justify-content-between align-items-center">
+				<div>
+					<strong>@item.ProductName</strong>
+					<p class="mb-0 text-muted">Price: @item.ProductPrice.ToString("C")</p>
+				</div>
+				<span class="badge badge-primary badge-pill">Quantity: @item.Quantity</span>
 			</div>
 		}
 	</div>

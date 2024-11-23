@@ -26,9 +26,9 @@ namespace PcBuilder.Services.Data
         {
             this._productRepository = productRepository;
         }
+       
 
-
-        public async Task<IEnumerable<AllProductsIndexViewModel>> GetAllProductsAsync()
+    public async Task<IEnumerable<AllProductsIndexViewModel>> GetAllProductsAsync()
         {
 	        return await _productRepository
 		        .GetAllAttached() 
@@ -48,12 +48,13 @@ namespace PcBuilder.Services.Data
 					
 					
 		        })
-		        .ToListAsync();
+                .ToListAsync();
 
 		}
 
         public async Task<bool> AddProductAsync(AddProductViewModel inputModel)
         {
+	        
 			bool isReleaseDateValid = DateTime
 				.TryParseExact(inputModel.AddedOn, ReleaseDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None,
 					out DateTime releaseDate);
@@ -65,7 +66,7 @@ namespace PcBuilder.Services.Data
 			Product product = new Product
 			{
 				ProductName = inputModel.ProductName,
-				ProductDescription = inputModel.ProductDescription,
+				ProductDescription = inputModel.ProductDescription ?? "No description available",
 				ProductPrice = inputModel.ProductPrice,
 				StockQuantity = inputModel.StockQuantity,
 				AddedOn = releaseDate,
@@ -76,6 +77,8 @@ namespace PcBuilder.Services.Data
 				
 			};
 
+            
+
 			await this._productRepository.AddAsync(product);
 
 			return true;
@@ -83,7 +86,7 @@ namespace PcBuilder.Services.Data
 
         public async Task<ProductDetailsViewModel?> GetProductDetailsByIdAsync(Guid id)
         {
-            Product? product = await GetProductByIdAsync(id); // Reuse the method
+            Product? product = await GetProductByIdAsync(id); 
 
             ProductDetailsViewModel? viewModel = null;
             if (product != null)

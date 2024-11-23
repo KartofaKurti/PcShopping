@@ -1,35 +1,145 @@
-﻿.card-link {
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease-in-out;
+﻿
+.card {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-    .card-link:hover .card {
+    .card:hover {
         transform: scale(1.05);
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     }
+
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
     .card-link:hover {
         text-decoration: none;
     }
 
-.card {
-    cursor: pointer;
-    border-radius: 8px;
-    overflow: hidden;
-}
 
 .card-img-top {
     height: 200px;
     object-fit: cover;
+    border-bottom: 2px solid #f1f1f1;
+    transition: transform 0.3s ease-in-out;
 }
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
 
 .card-title {
     font-size: 1.2rem;
     font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
+
 
 .card-text {
     font-size: 1rem;
     color: #555;
+    text-align: center;
+}
+
+
+.badge {
+    font-size: 0.9rem;
+    padding: 0.4em 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .badge.bg-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .badge.bg-success {
+        background-color: #28a745;
+        color: #fff;
+    }
+
+
+.pagination {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+    .pagination .page-link {
+        color: #007bff;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+        .pagination .page-link:hover {
+            background-color: #e9ecef;
+            transform: scale(1.05);
+        }
+
+    .pagination .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: #fff;
+    }
+
+
+.btn {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+
+.add-product-btn a {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    background-color: #007bff;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    .add-product-btn a:hover {
+        background-color: #0056b3;
+    }
+
+
+.text-muted.small {
+    font-size: 0.9rem;
+    color: #6c757d;
 }

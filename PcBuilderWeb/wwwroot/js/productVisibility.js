@@ -12,14 +12,14 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    if (button.textContent === 'Hide') {
-                        button.textContent = 'Show';
-                        button.classList.remove('btn-danger');
-                        button.classList.add('btn-success');
+                    if (this.textContent === 'Hide') {
+                        this.textContent = 'Show';
+                        this.classList.remove('btn-danger');
+                        this.classList.add('btn-success');
                     } else {
-                        button.textContent = 'Hide';
-                        button.classList.remove('btn-success');
-                        button.classList.add('btn-danger');
+                        this.textContent = 'Hide';
+                        this.classList.remove('btn-success');
+                        this.classList.add('btn-danger');
                     }
                 } else {
                     console.error("Error toggling product visibility:", data.message);

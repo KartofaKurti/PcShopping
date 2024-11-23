@@ -23,7 +23,8 @@ public class ProductApiController : ControllerBase
         var result = await _productService.ToggleProductVisibilityAsync(productId);
         if (result)
         {
-            return Ok(new { success = true, message = "Product visibility toggled successfully." });
+            var product = await _productService.GetProductByIdAsync(productId);
+            return Ok(new { success = true, isDeleted = product.IsDeleted, message = "Product visibility toggled successfully." });
         }
         return NotFound(new { success = false, message = "Product not found." });
     }
@@ -36,12 +37,6 @@ public class ProductApiController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> DeleteProduct(Guid productId)
     {
-        var product = await _productService.GetProductDetailsByIdAsync(productId);
-        if (product == null)
-        {
-            return NotFound(new { success = false, message = "Product not found." });
-        }
-
         bool deleted = await _productService.HardDeleteProductAsync(productId);
         if (!deleted)
         {

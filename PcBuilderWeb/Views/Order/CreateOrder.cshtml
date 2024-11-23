@@ -1,34 +1,52 @@
 ﻿@model PcBuilder.Web.ViewModels.Order.OrderViewModel
 
-<h2>Review Your Order</h2>
+@{
+	ViewData["Title"] = "Review Your Order";
+}
+<link rel="stylesheet" href="~/css/CreateOrder.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="container mt-4">
+	<h2 class="text-center mb-4">Review Your Order</h2>
 
-<form method="post">
-	<div>
-		<h4>Your Cart:</h4>
-		<ul>
-			@if (Model.CartItems != null && Model.CartItems.Any())
-			{
-				@foreach (var item in Model.CartItems)
+	<form method="post">
+		
+		<div class="order-section">
+			<h4>Your Cart:</h4>
+			<div class="cart-items">
+				@if (Model.CartItems != null && Model.CartItems.Any())
 				{
-					<li>@item.ProductName - @item.ProductPrice.ToString("C") - Quantity: @item.Quantity</li>
+					<ul class="list-group">
+						@foreach (var item in Model.CartItems)
+						{
+							<li class="list-group-item d-flex justify-content-between align-items-center">
+								<span>@item.ProductName - @item.ProductPrice.ToString("C")</span>
+								<span>Quantity: @item.Quantity</span>
+							</li>
+						}
+					</ul>
 				}
-			}
-			else
-			{
-				<li>No items in your cart.</li>
-			}
-		</ul>
-	</div>
+				else
+				{
+					<p>No items in your cart.</p>
+				}
+			</div>
+		</div>
 
-	<div>
-		<label for="Address">Shipping Address:</label>
-		<textarea id="Address" name="Address" required>@Model.Address</textarea>
-	</div>
+		
+		<div class="order-section mt-4">
+			<label for="Address">Shipping Address:</label>
+			<textarea id="Address" name="Address" class="form-control" rows="4" required>@Model.Address</textarea>
+		</div>
 
-	<button type="submit" class="btn btn-success">Place Order</button>
-</form>
+		
+		<div class="order-section mt-4">
+			<p><strong>Total Quantity:</strong> @Model.ProductQuantity</p>
+			<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+		</div>
 
-<div>
-	<p><strong>Total Quantity:</strong> @Model.ProductQuantity</p>
-	<p><strong>Total Price:</strong> @Model.TotalPrice.ToString("C")</p>
+		
+		<div class="text-center mt-4">
+			<button type="submit" class="btn btn-success btn-lg">Place Order</button>
+		</div>
+	</form>
 </div>

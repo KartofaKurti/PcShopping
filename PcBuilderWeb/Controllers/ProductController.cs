@@ -24,18 +24,31 @@ namespace PcBuilderWeb.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(int page = 1, int pageSize = 6)
 		{
-			IEnumerable<AllProductsIndexViewModel> allProducts =
-				await this.productService.GetAllProductsAsync();
+            IEnumerable<AllProductsIndexViewModel> allProducts =
+                await this.productService.GetAllProductsAsync();
+
 
             if (!User.IsInRole(AdminRole))
             {
                 allProducts = allProducts.Where(p => !p.isDeleted);
             }
 
-			return this.View(allProducts);
-		}
+            int totalProducts = allProducts.Count();
+
+            IEnumerable<AllProductsIndexViewModel> paginatedProducts =
+                allProducts.Skip((page - 1) * pageSize).Take(pageSize);
+
+            var paginationModel = new PaginatedProductsViewModel
+            {
+                Products = paginatedProducts,
+                CurrentPage = page,
+                TotalPages = (int)Math.Ceiling((double)totalProducts / pageSize)
+            };
+
+            return View(paginationModel);
+        }
 
 
 		[Authorize(Roles = AdminRole)]
@@ -51,6 +64,10 @@ namespace PcBuilderWeb.Controllers
 		[HttpPost]
 		public async Task<IActionResult> AddProduct(AddProductViewModel inputModel)
 		{
+			if (!ModelState.IsValid)
+			{
+				return View(inputModel);
+			}
 			bool result = await this.productService.AddProductAsync(inputModel);
 			if (result == false)
 			{
@@ -70,24 +87,12 @@ namespace PcBuilderWeb.Controllers
 		public async Task<IActionResult> Details(Guid id)
 		{
 			var productDetails = await productService.GetProductDetailsByIdAsync(id);
-			if (productDetails == null)
-			{
-				return NotFound(); 
-			}
-			return View(productDetails);
-		}
-
-        [Authorize(Roles = "ADMIN")]
-        public async Task<IActionResult> ToggleProductVisibility(Guid productId)
-        {
-            bool isToggled = await productService.ToggleProductVisibilityAsync(productId);
-            if (!isToggled)
+            if (productDetails == null)
             {
-                return NotFound(); 
+                return NotFound();
             }
-
-            return RedirectToAction("Index"); 
-        }
+            return View(productDetails);
+		}
 
         [Authorize(Roles = "ADMIN")]
         [HttpGet]

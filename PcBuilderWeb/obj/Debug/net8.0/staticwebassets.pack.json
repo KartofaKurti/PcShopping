@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets\\css\\AddProduct.css"
     },
     {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\CartIndex.css",
+      "PackagePath": "staticwebassets\\css\\CartIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\CreateOrder.css",
+      "PackagePath": "staticwebassets\\css\\CreateOrder.css"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\OrderDetails.css",
+      "PackagePath": "staticwebassets\\css\\OrderDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\OrderIndex.css",
+      "PackagePath": "staticwebassets\\css\\OrderIndex.css"
+    },
+    {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\ProductDetails.css",
       "PackagePath": "staticwebassets\\css\\ProductDetails.css"
     },
@@ -31,6 +47,10 @@
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\hardDelete.js",
       "PackagePath": "staticwebassets\\js\\hardDelete.js"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productDetails.js",
+      "PackagePath": "staticwebassets\\js\\productDetails.js"
     },
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productVisibility.js",

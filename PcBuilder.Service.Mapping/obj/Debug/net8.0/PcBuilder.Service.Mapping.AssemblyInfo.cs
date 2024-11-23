@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PcBuilder.Service.Mapping")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c2e1838efe79ccf3dac5ebb14579b6887bd78f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa1dec4c45ff647115fad7f62a4cfa2e929aa385")]
 [assembly: System.Reflection.AssemblyProductAttribute("PcBuilder.Service.Mapping")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PcBuilder.Service.Mapping")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

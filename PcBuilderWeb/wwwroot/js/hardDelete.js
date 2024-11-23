@@ -1,35 +1,39 @@
-﻿document.querySelectorAll('.hardDeleteButton').forEach(button => {
+﻿document.querySelectorAll('[data-bs-target="#deleteModal"]').forEach(button => {
     button.addEventListener('click', function () {
         const productId = this.getAttribute('data-product-id');
         const confirmButton = document.getElementById('confirmDeleteButton');
-
-        
         confirmButton.setAttribute('data-product-id', productId);
     });
 });
 
+// Handle the Confirm Delete button click
 document.getElementById('confirmDeleteButton').addEventListener('click', function () {
     const productId = this.getAttribute('data-product-id');
 
     fetch(`/api/ProductApi/DeleteProduct/${productId}`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {   
+        .then(response => {
+            if (response.ok) {
+                // Hide the modal after successful deletion
                 const deleteModal = document.getElementById('deleteModal');
                 const modalInstance = bootstrap.Modal.getInstance(deleteModal);
                 modalInstance.hide();
 
+                // Redirect to Product Index
                 window.location.href = '/Product/Index';
             } else {
-                console.error("Error deleting product:", data.message);
+                // Log error and handle API failure
+                return response.json().then(data => {
+                    console.error("Failed to delete product:", data.message || 'Unknown error.');
+                });
             }
         })
         .catch(error => {
-            console.error("Error:", error);
+            // Handle network or other errors
+            console.error("Error deleting product:", error);
         });
 });

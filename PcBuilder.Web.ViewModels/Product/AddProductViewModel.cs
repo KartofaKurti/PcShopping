@@ -17,11 +17,11 @@ namespace PcBuilder.Web.ViewModels.Product
         [StringLength(MaxlengthProductName, ErrorMessage = "The product name must be between {2} and {1} characters.", MinimumLength = MinlengthProductName)]
         public string ProductName { get; set; } = null!;
 
-        [Required(ErrorMessage = DescriptionError)]
-        [StringLength(MaxlengthLeDescription, ErrorMessage = "The description must not exceed {1} characters.")]
-        public string ProductDescription { get; set; } = null!;
+		[Required(ErrorMessage = DescriptionError)]
+		[StringLength(MaxlengthLeDescription, ErrorMessage = "The description must not exceed {1} characters.")]
+		public string ProductDescription { get; set; } = null!;
 
-        [Required(ErrorMessage = PriceError)]
+		[Required(ErrorMessage = PriceError)]
         [Range(0.01, double.MaxValue, ErrorMessage = PriceError)]
         public decimal ProductPrice { get; set; }
 
