@@ -9,6 +9,7 @@ using PcBuilder.Services.Mapping;
 using PcBuilder.Web.ViewModels.Product;
 using static PcBuilder.Common.DateValidation;
 using static PcBuilder.Common.RolesValidation;
+using static PcBuilder.Common.ProductValidation;
 
 namespace PcBuilderWeb.Controllers
 {
@@ -64,10 +65,8 @@ namespace PcBuilderWeb.Controllers
 		[HttpPost]
 		public async Task<IActionResult> AddProduct(AddProductViewModel inputModel)
 		{
-			if (!ModelState.IsValid)
-			{
-				return View(inputModel);
-			}
+           
+			
 			bool result = await this.productService.AddProductAsync(inputModel);
 			if (result == false)
 			{

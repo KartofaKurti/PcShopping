@@ -17,5 +17,6 @@ namespace PcBuilder.Web.ViewModels.Product
 	    public string? ImageUrl { get; set; }
 	    public string ManufacturerName { get; set; }
 	    public string Category { get; set; }
-	}
+
+    }
 }

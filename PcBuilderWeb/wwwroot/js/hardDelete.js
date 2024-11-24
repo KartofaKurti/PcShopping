@@ -6,7 +6,6 @@
     });
 });
 
-// Handle the Confirm Delete button click
 document.getElementById('confirmDeleteButton').addEventListener('click', function () {
     const productId = this.getAttribute('data-product-id');
 
@@ -18,22 +17,18 @@ document.getElementById('confirmDeleteButton').addEventListener('click', functio
     })
         .then(response => {
             if (response.ok) {
-                // Hide the modal after successful deletion
                 const deleteModal = document.getElementById('deleteModal');
                 const modalInstance = bootstrap.Modal.getInstance(deleteModal);
                 modalInstance.hide();
 
-                // Redirect to Product Index
                 window.location.href = '/Product/Index';
             } else {
-                // Log error and handle API failure
                 return response.json().then(data => {
                     console.error("Failed to delete product:", data.message || 'Unknown error.');
                 });
             }
         })
         .catch(error => {
-            // Handle network or other errors
             console.error("Error deleting product:", error);
         });
 });

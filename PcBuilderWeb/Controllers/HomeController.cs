@@ -1,23 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
+using PcBuilder.Services.Data.Interfaces;
 using PcBuilder.Web.ViewModels;
 using System.Diagnostics;
+using PcBuilder.Web.ViewModels.Home;
 
 namespace PcBuilderWeb.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProductService productService)
         {
-            _logger = logger;
+            _productService = productService;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         public IActionResult AboutUs()
         {
             return View();
@@ -28,6 +24,19 @@ namespace PcBuilderWeb.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            
+            var products = (await _productService.GetAvailableProductsAsync()).Take(4); 
+
+            var viewModel = new HomePageViewModel
+            {
+                Products = products
+            };
+
+            return View(viewModel);
         }
     }
 }

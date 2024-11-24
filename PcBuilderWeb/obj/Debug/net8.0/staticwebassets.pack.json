@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\css\\ProductIndex.css"
     },
     {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -51,6 +55,10 @@
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productDetails.js",
       "PackagePath": "staticwebassets\\js\\productDetails.js"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productSearch.js",
+      "PackagePath": "staticwebassets\\js\\productSearch.js"
     },
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\productVisibility.js",

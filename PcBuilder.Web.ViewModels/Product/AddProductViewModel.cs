@@ -34,6 +34,7 @@ namespace PcBuilder.Web.ViewModels.Product
         public string AddedOn { get; set; }
 
         [StringLength(MaxlengthImageUrl, ErrorMessage = UrlError)]
+        [RegularExpression(@"^(https?:\/\/.*)?$", ErrorMessage = UrlError)] 
         public string? ImageUrl { get; set; }
 
         [Required(ErrorMessage = CategoryError)]

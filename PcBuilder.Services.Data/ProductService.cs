@@ -15,6 +15,8 @@ using Manufacturer = PcBuilder.Data.Models.Enums.ManufacturerType;
 using static PcBuilder.Common.DateValidation;
 using static PcBuilder.Common.ProductValidation;
 using PcBuilder.Data.Models.Enums;
+using NuGet.Protocol.Core.Types;
+using System.Text.RegularExpressions;
 
 namespace PcBuilder.Services.Data
 {
@@ -54,7 +56,6 @@ namespace PcBuilder.Services.Data
 
         public async Task<bool> AddProductAsync(AddProductViewModel inputModel)
         {
-	        
 			bool isReleaseDateValid = DateTime
 				.TryParseExact(inputModel.AddedOn, ReleaseDateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None,
 					out DateTime releaseDate);
@@ -62,7 +63,32 @@ namespace PcBuilder.Services.Data
 			{
 				return false;
 			}
+			if (string.IsNullOrWhiteSpace(inputModel.ProductName))
+			{
+				return false;  
+			}
 
+			if (inputModel.ProductPrice <= 0)
+			{
+				return false; 
+			}
+
+			if (inputModel.StockQuantity <= 0)
+			{
+				return false;  
+			}
+
+		
+			if (!string.IsNullOrEmpty(inputModel.ImageUrl))
+			{
+				var regex = new Regex(@"^(https?:\/\/.*)?$");
+				if (!regex.IsMatch(inputModel.ImageUrl))
+				{
+					return false;  
+				}
+			}
+
+		
 			Product product = new Product
 			{
 				ProductName = inputModel.ProductName,
@@ -70,15 +96,13 @@ namespace PcBuilder.Services.Data
 				ProductPrice = inputModel.ProductPrice,
 				StockQuantity = inputModel.StockQuantity,
 				AddedOn = releaseDate,
-				ImageUrl = inputModel.ImageUrl ?? ImageNotFoundUrl,
+				ImageUrl = inputModel.ImageUrl ?? ImageNotFoundUrl,  
 				ManufacturerId = inputModel.ManufacturerId,
 				CategoryId = inputModel.CategoryId,
 				IsDeleted = false
-				
 			};
 
-            
-
+			
 			await this._productRepository.AddAsync(product);
 
 			return true;
@@ -116,6 +140,8 @@ namespace PcBuilder.Services.Data
                 .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
+
+       
 
         public async Task<IEnumerable<Product>> GetAvailableProductsAsync()
         {
@@ -166,6 +192,11 @@ namespace PcBuilder.Services.Data
 
             await _productRepository.UpdateAsync(product);
             return true;
+        }
+
+        public async Task<ProductSearchViewModel> SearchProductsAsync(ProductSearchViewModel searchModel, int page = 1, int pageSize = 10)
+        {
+            return null;
         }
     }
 }

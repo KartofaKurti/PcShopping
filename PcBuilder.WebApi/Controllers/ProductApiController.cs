@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PcBuilder.Data.Models;
+using PcBuilder.Data.Models.Enums;
+using PcBuilder.Services.Data;
 using PcBuilder.Services.Data.Interfaces;
+using PcBuilder.Web.ViewModels.Product;
 
 [ApiController]
 [Authorize(Roles = "ADMIN")]
@@ -44,5 +48,31 @@ public class ProductApiController : ControllerBase
         }
 
         return Ok(new { success = true, message = "Product deleted successfully." });
+    }
+
+    [HttpGet("GetFilters")]
+    public IActionResult GetFilters()
+    {
+        var manufacturers = Enum.GetValues(typeof(ManufacturerType))
+            .Cast<ManufacturerType>()
+            .Select(e => new { Id = (int)e, Name = e.ToString() });
+
+        var categories = Enum.GetValues(typeof(CategoryType))
+            .Cast<CategoryType>()
+            .Select(e => new { Id = (int)e, Name = e.ToString() });
+
+        return Ok(new
+        {
+            Manufacturers = manufacturers,
+            Categories = categories
+        });
+    }
+
+    [HttpPost("search")]
+    [AllowAnonymous]
+    public async Task<IActionResult> SearchProductsAsync([FromQuery] ProductSearchViewModel searchModel, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+    {
+        var result = await _productService.SearchProductsAsync(searchModel, page, pageSize);
+        return Ok(result);
     }
 }
