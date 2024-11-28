@@ -54,45 +54,48 @@ namespace PcBuilder.Services.Data
 
         public async Task<bool> AddProductToUserCarttAsync(string? productId, string userId)
         {
-			Guid productGuid = Guid.Empty;
-			if (!this.IsGuidValid(productId, ref productGuid))
-			{
-				return false;
-			}
+            Guid productGuid = Guid.Empty;
+            if (!this.IsGuidValid(productId, ref productGuid))
+            {
+                return false;
+            }
 
-			Product? product = await this._productRepository
-				.GetByIdAsync(productGuid);
-			if (product == null)
-			{
-				return false;
-			}
+            Product? product = await this._productRepository.GetByIdAsync(productGuid);
+            if (product == null || product.StockQuantity <= 0) 
+            {
+                return false;
+            }
 
-			Guid userGuid = Guid.Parse(userId);
+            Guid userGuid = Guid.Parse(userId);
 
-		
-			ApplicationUserProduct? addedToCartAlready = await this._userCartRepository
-				.FirstOrDefaultAsync(um => um.ProductId == productGuid &&
-				                           um.ApplicationUserId == userGuid);
+            ApplicationUserProduct? addedToCartAlready = await this._userCartRepository
+                .FirstOrDefaultAsync(um => um.ProductId == productGuid &&
+                                           um.ApplicationUserId == userGuid);
 
-			if (addedToCartAlready == null)
-			{
-				ApplicationUserProduct newUserProduct = new ApplicationUserProduct()
-				{
-					ApplicationUserId = userGuid,
-					ProductId = productGuid,
-					Quantity = 1
-				};
+            if (addedToCartAlready == null)
+            {
+                ApplicationUserProduct newUserProduct = new ApplicationUserProduct()
+                {
+                    ApplicationUserId = userGuid,
+                    ProductId = productGuid,
+                    Quantity = 1
+                };
 
-				await this._userCartRepository.AddAsync(newUserProduct);
-			}
-			else
-			{
-				addedToCartAlready.Quantity += 1;
-				await this._userCartRepository.UpdateAsync(addedToCartAlready);
-			}
+                await this._userCartRepository.AddAsync(newUserProduct);
+            }
+            else
+            {
+                if (product.StockQuantity < addedToCartAlready.Quantity + 1) 
+                {
+                    return false;
+                }
 
-			return true;
-		}
+                addedToCartAlready.Quantity += 1;
+                await this._userCartRepository.UpdateAsync(addedToCartAlready);
+            }
+
+            return true;
+        }
 
         public async Task<bool> RemoveProductFromUserCartAsync(string? productId, string userId)
         {
@@ -160,5 +163,30 @@ namespace PcBuilder.Services.Data
 		        }
 	        }
 		}
+
+        public async Task<(bool Success, string Message)> UpdateQuantityAsync(Guid productId, Guid userId, int quantity)
+        {
+            if (quantity < 1)
+            {
+                return (false, "Quantity must be at least 1.");
+            }
+
+            var product = await _productRepository.GetByIdAsync(productId);
+            if (product == null || product.StockQuantity < quantity)
+            {
+                return (false, "Insufficient stock available.");
+            }
+
+            var cartItem = await _userCartRepository.FirstOrDefaultAsync(ci => ci.ProductId == productId && ci.ApplicationUserId == userId);
+            if (cartItem == null)
+            {
+                return (false, "Product not found in cart.");
+            }
+
+            cartItem.Quantity = quantity;
+            await _userCartRepository.UpdateAsync(cartItem);
+
+            return (true, "Quantity updated successfully.");
+        }
     }
 }

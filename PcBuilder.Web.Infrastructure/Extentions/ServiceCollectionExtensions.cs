@@ -15,7 +15,6 @@ namespace PcBuilder.Web.Infrastructure.Extensions
 	{
         public static void RegisterRepositories(this IServiceCollection services, Assembly modelsAssembly)
         {
-            // TODO: Re-write the implementation in such way that the user must create a single class for every repository
             Type[] typesToExclude = new Type[] { typeof(ApplicationUser), typeof(CategoryType), typeof(ManufacturerType) };
             Type[] modelTypes = modelsAssembly
                 .GetTypes()

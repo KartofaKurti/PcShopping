@@ -28,8 +28,12 @@ public class ProductApiController : ControllerBase
         if (result)
         {
             var product = await _productService.GetProductByIdAsync(productId);
-            return Ok(new { success = true, isDeleted = product.IsDeleted, message = "Product visibility toggled successfully." });
+            return Ok(new
+            {
+                success = true, isDeleted = product.IsDeleted, message = "Product visibility toggled successfully."
+            });
         }
+
         return NotFound(new { success = false, message = "Product not found." });
     }
 
@@ -68,11 +72,4 @@ public class ProductApiController : ControllerBase
         });
     }
 
-    [HttpPost("search")]
-    [AllowAnonymous]
-    public async Task<IActionResult> SearchProductsAsync([FromQuery] ProductSearchViewModel searchModel, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
-    {
-        var result = await _productService.SearchProductsAsync(searchModel, page, pageSize);
-        return Ok(result);
-    }
 }

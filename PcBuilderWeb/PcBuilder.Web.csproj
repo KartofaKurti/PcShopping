@@ -33,4 +33,8 @@
     <ProjectReference Include="..\PcBuilder.WebApi\PcBuilder.WebApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\imgs\" />
+  </ItemGroup>
+
 </Project>

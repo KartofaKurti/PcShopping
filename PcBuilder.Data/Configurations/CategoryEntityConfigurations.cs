@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PcBuilder.Data.Models.Enums;
 
 namespace PcBuilder.Data.Configurations
 {
@@ -13,13 +14,13 @@ namespace PcBuilder.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasData(new List<Category>
-            {
-                new Category { Id = 1, CategoryName = "Processor" },
-                new Category { Id = 2, CategoryName = "Graphics Card" },
-                new Category { Id = 3, CategoryName = "Memory" },
-                new Category { Id = 4, CategoryName = "Storage" }
-            });
+            builder.HasData(Enum.GetValues(typeof(CategoryType))
+                .Cast<CategoryType>()
+                .Select(e => new Category
+                {
+                    Id = (int)e,
+                    CategoryName = e.ToString()
+                }));
         }
     }
 }

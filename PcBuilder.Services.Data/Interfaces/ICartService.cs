@@ -18,5 +18,7 @@ namespace PcBuilder.Services.Data.Interfaces
         Task<decimal> CalculateTotalPriceAsync(string userId);
 
         Task ClearUserCartAsync(string userId);
-	}
+        public Task<(bool Success, string Message)> UpdateQuantityAsync(Guid productId, Guid userId, int quantity);
+
+    }
 }

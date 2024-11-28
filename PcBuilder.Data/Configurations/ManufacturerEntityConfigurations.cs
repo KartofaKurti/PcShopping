@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PcBuilder.Data.Models;
+using PcBuilder.Data.Models.Enums;
 
 namespace PcBuilder.Data.Configurations
 {
@@ -13,13 +14,13 @@ namespace PcBuilder.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Manufacturer> builder)
         {
-            builder.HasData(new List<Manufacturer>
-            {
-                new Manufacturer { Id = 1, ManufacturerName = "Intel" },
-                new Manufacturer { Id = 2, ManufacturerName = "AMD" },
-                new Manufacturer { Id = 3, ManufacturerName = "NVIDIA" }
-               
-            });
+            builder.HasData(Enum.GetValues(typeof(ManufacturerType))
+                .Cast<ManufacturerType>()
+                .Select(e => new Manufacturer
+                {
+                    Id = (int)e,
+                    ManufacturerName = e.ToString()
+                }));
         }
     }
 }

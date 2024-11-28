@@ -242,6 +242,62 @@ namespace PcBuilder.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("d89d55d0-643e-4c2c-ba10-cf4af53bdd5a"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8e9a37ab-a8b0-45d5-a1d5-5da25410fe18",
+                            Email = "john.doe@example.com",
+                            EmailConfirmed = false,
+                            FirstName = "John",
+                            LastName = "Doe",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JOHN.DOE@EXAMPLE.COM",
+                            NormalizedUserName = "JOHN.DOE@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAENgZWHdDAyBKL+GOCN4LrKYYO80xeSNGQbQj6VpyvrztlbMnzuOqtPsXDViPeA1kxw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d9f20ede-5b62-496e-9bdf-7684bd5d2fba",
+                            TwoFactorEnabled = false,
+                            UserName = "john.doe@example.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("0d7e387e-ec0d-400a-b909-d28a9535cd91"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a0fcfc1e-2f85-42a2-ab9e-b439d3a4e0c1",
+                            Email = "jane.smith@example.com",
+                            EmailConfirmed = false,
+                            FirstName = "Jane",
+                            LastName = "Smith",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "JANE.SMITH@EXAMPLE.COM",
+                            NormalizedUserName = "JANE.SMITH@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL3Wh3dNoVvf2b3O0o2hXCSJ5u18dN7ENT/NwmmDeiGhVCfysV7hCQCIDA643WbUjA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "fbb2d54e-c535-45d9-9997-f5dda9faf7e2",
+                            TwoFactorEnabled = false,
+                            UserName = "jane.smith@example.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("247cefe3-c6c3-4c42-b121-e67ca56c804e"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "112c332b-e268-45b9-86dc-95790d9cb6c6",
+                            Email = "admin@example.com",
+                            EmailConfirmed = false,
+                            FirstName = "Admin",
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
+                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAENiMADEnMPlTWpKTqSBdwsl6kc/9UJP1FGS2xmdBWkvGQUvilmtndNhC4DjlZqNJsQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "dfcd70e5-8e23-40ee-9d46-514e224a16ef",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@example.com"
+                        });
                 });
 
             modelBuilder.Entity("PcBuilder.Data.Models.ApplicationUserProduct", b =>
@@ -288,7 +344,7 @@ namespace PcBuilder.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryName = "Graphics Card"
+                            CategoryName = "GraphicCard"
                         },
                         new
                         {
@@ -299,6 +355,86 @@ namespace PcBuilder.Data.Migrations
                         {
                             Id = 4,
                             CategoryName = "Storage"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryName = "Motherboard"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryName = "PowerSupply"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CategoryName = "CoolingSystem"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CategoryName = "Case"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CategoryName = "Monitor"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CategoryName = "Keyboard"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CategoryName = "Mouse"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CategoryName = "Headset"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CategoryName = "Speaker"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CategoryName = "Networking"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CategoryName = "Software"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryName = "Accessories"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CategoryName = "ExternalStorage"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CategoryName = "Printer"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CategoryName = "Scanner"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CategoryName = "UPS"
                         });
                 });
 
@@ -332,7 +468,92 @@ namespace PcBuilder.Data.Migrations
                         new
                         {
                             Id = 3,
-                            ManufacturerName = "NVIDIA"
+                            ManufacturerName = "Nvidia"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ManufacturerName = "Asus"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ManufacturerName = "MSI"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ManufacturerName = "Gigabyte"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ManufacturerName = "Corsair"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ManufacturerName = "Samsung"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ManufacturerName = "Kingston"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ManufacturerName = "Seagate"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ManufacturerName = "WesternDigital"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ManufacturerName = "EVGA"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ManufacturerName = "Zotac"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ManufacturerName = "CoolerMaster"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ManufacturerName = "Razer"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ManufacturerName = "Logitech"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ManufacturerName = "Dell"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ManufacturerName = "HP"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ManufacturerName = "Lenovo"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ManufacturerName = "Acer"
                         });
                 });
 
@@ -353,6 +574,7 @@ namespace PcBuilder.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalPrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
@@ -370,6 +592,7 @@ namespace PcBuilder.Data.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("ProductId")
@@ -427,6 +650,7 @@ namespace PcBuilder.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("ProductPrice")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("StockQuantity")
@@ -445,15 +669,262 @@ namespace PcBuilder.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d16c5f7c-9a95-4afe-8c5c-daa7eb876f10"),
-                            AddedOn = new DateTime(2024, 11, 11, 0, 0, 0, 0, DateTimeKind.Local),
+                            Id = new Guid("8d1ad771-e0c2-42f7-b676-36cd5d826f7e"),
+                            AddedOn = new DateTime(2024, 11, 18, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8793),
+                            CategoryId = 8,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9XMpErvJJ23ttmNH27I0ryXkBctPnIdY6Cw&s",
+                            IsDeleted = false,
+                            ManufacturerId = 18,
+                            ProductDescription = "High-performance gaming desktop with Intel Core i9-12900K and NVIDIA GeForce RTX 3080.",
+                            ProductName = "HP Omen 45L Gaming Desktop",
+                            ProductPrice = 2199.99m,
+                            StockQuantity = 5
+                        },
+                        new
+                        {
+                            Id = new Guid("9557f8a4-82a5-4df4-8589-2acf04dd9137"),
+                            AddedOn = new DateTime(2024, 11, 16, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8829),
+                            CategoryId = 8,
+                            ImageUrl = "https://m.media-amazon.com/images/I/61Qsj+79gpL.jpg",
+                            IsDeleted = false,
+                            ManufacturerId = 17,
+                            ProductDescription = "Top-tier gaming desktop featuring Intel Core i9-12900KF and NVIDIA GeForce RTX 3090.",
+                            ProductName = "Alienware Aurora R13",
+                            ProductPrice = 3299.99m,
+                            StockQuantity = 3
+                        },
+                        new
+                        {
+                            Id = new Guid("b2c04416-5fca-4924-8d4d-9606ea3520d7"),
+                            AddedOn = new DateTime(2024, 11, 8, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8832),
+                            CategoryId = 8,
+                            ImageUrl = "placeholder",
+                            IsDeleted = false,
+                            ManufacturerId = 20,
+                            ProductDescription = "Mid-range gaming PC with AMD Ryzen 7 5800X and NVIDIA GeForce RTX 3060 Ti.",
+                            ProductName = "CyberPowerPC Gamer Supreme",
+                            ProductPrice = 1499.99m,
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            Id = new Guid("f8865874-b830-4a31-bd84-a54a941064c1"),
+                            AddedOn = new DateTime(2024, 11, 20, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8845),
+                            CategoryId = 8,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMAbfTV4NnUxIDwvzYDthWyZ78yTVZ8uASjw&s",
+                            IsDeleted = false,
+                            ManufacturerId = 5,
+                            ProductDescription = "Gaming desktop with Intel Core i7-13700KF and NVIDIA GeForce RTX 4070 Ti.",
+                            ProductName = "MSI Infinite RS 13th",
+                            ProductPrice = 2599.99m,
+                            StockQuantity = 7
+                        },
+                        new
+                        {
+                            Id = new Guid("fca25a7d-5374-4d7d-b0fe-dd86663a8503"),
+                            AddedOn = new DateTime(2024, 10, 29, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8847),
                             CategoryId = 1,
-                            ImageUrl = "Balls",
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXX3ZSYTZvtMtFoaUA_oki-zPXvMGkVkEl5w&s",
                             IsDeleted = false,
                             ManufacturerId = 1,
-                            ProductDescription = "16 Threats 4.5Ghz",
-                            ProductName = "Intel Core I9",
-                            ProductPrice = 300m,
+                            ProductDescription = "12th Gen Intel Core Processor with 16 cores and 24 threads.",
+                            ProductName = "Intel Core i9-12900K",
+                            ProductPrice = 599.99m,
+                            StockQuantity = 20
+                        },
+                        new
+                        {
+                            Id = new Guid("6fffccc1-cb82-4ac6-834d-752a74d736b5"),
+                            AddedOn = new DateTime(2024, 10, 14, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8861),
+                            CategoryId = 1,
+                            ImageUrl = "https://ardes.bg/uploads/original/amd-ryzen-9-5900x-3-70ghz-294246.jpg",
+                            IsDeleted = false,
+                            ManufacturerId = 2,
+                            ProductDescription = "12-core, 24-thread unlocked desktop processor.",
+                            ProductName = "AMD Ryzen 9 5900X",
+                            ProductPrice = 499.99m,
+                            StockQuantity = 25
+                        },
+                        new
+                        {
+                            Id = new Guid("38b6673d-1960-46c2-9118-4fbacf618be2"),
+                            AddedOn = new DateTime(2024, 9, 29, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8863),
+                            CategoryId = 1,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsjmv9eF3JH-x84rITfEsNzyqROaH77VFSbg&s",
+                            IsDeleted = false,
+                            ManufacturerId = 1,
+                            ProductDescription = "Mid-range processor for gaming and productivity.",
+                            ProductName = "Intel Core i5-12600K",
+                            ProductPrice = 289.99m,
+                            StockQuantity = 30
+                        },
+                        new
+                        {
+                            Id = new Guid("bcc0c8b5-8c1f-4fd0-9c33-964e175f3666"),
+                            AddedOn = new DateTime(2024, 11, 13, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8868),
+                            CategoryId = 2,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKl2rQBycoQrqhqNZ2fZxvg9b6VwYvlpVU0A&s",
+                            IsDeleted = false,
+                            ManufacturerId = 3,
+                            ProductDescription = "High-performance gaming graphics card.",
+                            ProductName = "NVIDIA GeForce RTX 3080",
+                            ProductPrice = 799.99m,
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            Id = new Guid("5b98ef71-ba75-4308-8493-332b29dd7a3a"),
+                            AddedOn = new DateTime(2024, 11, 3, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8870),
+                            CategoryId = 2,
+                            ImageUrl = "https://static.gigabyte.com/StaticFile/Image/Global/0a0848c3f652206dc7f2c5c30c6cdf51/Product/28078/Png",
+                            IsDeleted = false,
+                            ManufacturerId = 2,
+                            ProductDescription = "High-end GPU for gamers and creators.",
+                            ProductName = "AMD Radeon RX 6700 XT",
+                            ProductPrice = 479.99m,
+                            StockQuantity = 8
+                        },
+                        new
+                        {
+                            Id = new Guid("be327c0b-4042-4852-809d-3e07cadef3dc"),
+                            AddedOn = new DateTime(2024, 11, 18, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8873),
+                            CategoryId = 2,
+                            ImageUrl = "https://desktop.bg/system/images/330952/original/asus_dual_geforce_rtx_3060_v2_oc.png",
+                            IsDeleted = false,
+                            ManufacturerId = 3,
+                            ProductDescription = "Affordable GPU for gaming and rendering.",
+                            ProductName = "NVIDIA GeForce RTX 3060",
+                            ProductPrice = 329.99m,
+                            StockQuantity = 15
+                        },
+                        new
+                        {
+                            Id = new Guid("ce98137e-68b1-48fa-8f9e-7b08a23d0a3f"),
+                            AddedOn = new DateTime(2024, 11, 16, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8876),
+                            CategoryId = 3,
+                            ImageUrl = "https://desktop.bg/system/images/335374/original/16gb_2x8gb_ddr4_3200mhz_corsair_vengeance_lpx_black_duplicate.png",
+                            IsDeleted = false,
+                            ManufacturerId = 7,
+                            ProductDescription = "High-performance DDR4 RAM for gaming PCs.",
+                            ProductName = "Corsair Vengeance LPX 16GB",
+                            ProductPrice = 79.99m,
+                            StockQuantity = 50
+                        },
+                        new
+                        {
+                            Id = new Guid("ad1dd074-4076-4fe9-9e7c-72b36638f784"),
+                            AddedOn = new DateTime(2024, 11, 14, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8880),
+                            CategoryId = 3,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHgmi8hPa4cN1-i4J1Yoj3pJosnb4Y9qkjuA&s",
+                            IsDeleted = false,
+                            ManufacturerId = 9,
+                            ProductDescription = "Stylish DDR4 RAM with RGB lighting.",
+                            ProductName = "G.Skill Trident Z RGB 16GB",
+                            ProductPrice = 89.99m,
+                            StockQuantity = 40
+                        },
+                        new
+                        {
+                            Id = new Guid("eb6ebcd4-9497-4d89-98ae-81e89e8453bc"),
+                            AddedOn = new DateTime(2024, 11, 8, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8882),
+                            CategoryId = 4,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbyzFKbMYhmuBtvMIYYqKdu6mKjajg-dMchg&s",
+                            IsDeleted = false,
+                            ManufacturerId = 8,
+                            ProductDescription = "Fast PCIe 4.0 NVMe SSD for high-performance systems.",
+                            ProductName = "Samsung 980 PRO 1TB SSD",
+                            ProductPrice = 149.99m,
+                            StockQuantity = 20
+                        },
+                        new
+                        {
+                            Id = new Guid("50c54595-b45d-4d7f-b6d8-97aa8eb9f9a6"),
+                            AddedOn = new DateTime(2024, 11, 23, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8885),
+                            CategoryId = 4,
+                            ImageUrl = "https://ardes.bg/uploads/original/seagate-hdd-desktop-barracuda-guardian-3-5-2tb-sat-202842.jpg",
+                            IsDeleted = false,
+                            ManufacturerId = 10,
+                            ProductDescription = "Reliable 2TB hard drive for storage solutions.",
+                            ProductName = "Seagate Barracuda 2TB HDD",
+                            ProductPrice = 49.99m,
+                            StockQuantity = 35
+                        },
+                        new
+                        {
+                            Id = new Guid("39eab59d-d36d-44a1-99a7-cdabc1f4d77b"),
+                            AddedOn = new DateTime(2024, 11, 6, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8921),
+                            CategoryId = 6,
+                            ImageUrl = "https://cdn.ozone.bg/media/catalog/product/z/a/zahranvane_corsair_rm750x_750w_1649168291_0.jpg",
+                            IsDeleted = false,
+                            ManufacturerId = 7,
+                            ProductDescription = "750W fully modular power supply.",
+                            ProductName = "Corsair RM750x",
+                            ProductPrice = 129.99m,
+                            StockQuantity = 15
+                        },
+                        new
+                        {
+                            Id = new Guid("b2a45586-25af-446b-b80f-9c7fcc084d50"),
+                            AddedOn = new DateTime(2024, 10, 29, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8926),
+                            CategoryId = 6,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYGL_1tHmDzXpC5ougJrrGMSAzbmF4m96Nw&s",
+                            IsDeleted = false,
+                            ManufacturerId = 12,
+                            ProductDescription = "850W 80+ Gold certified power supply.",
+                            ProductName = "EVGA SuperNOVA 850 G5",
+                            ProductPrice = 139.99m,
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            Id = new Guid("00460a6d-6988-44dc-b931-d53e7ea17dfe"),
+                            AddedOn = new DateTime(2024, 10, 31, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8928),
+                            CategoryId = 7,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrYLf6w4qlkOW7Fiq2rHDHMCfAUGsTJ285bw&s",
+                            IsDeleted = false,
+                            ManufacturerId = 14,
+                            ProductDescription = "Popular air cooler for CPUs.",
+                            ProductName = "Cooler Master Hyper 212 Black Edition",
+                            ProductPrice = 39.99m,
+                            StockQuantity = 20
+                        },
+                        new
+                        {
+                            Id = new Guid("a8698aa1-3850-4ad6-a7c4-4425412af140"),
+                            AddedOn = new DateTime(2024, 10, 9, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8932),
+                            CategoryId = 7,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU4PVoTx-579S2oM2ogZfGlGgh4ou0pRtiQQ&s",
+                            IsDeleted = false,
+                            ManufacturerId = 16,
+                            ProductDescription = "Premium AIO liquid cooler with customizable display.",
+                            ProductName = "NZXT Kraken Z73",
+                            ProductPrice = 249.99m,
+                            StockQuantity = 8
+                        },
+                        new
+                        {
+                            Id = new Guid("d417f1b8-0667-42f7-9c65-a5d050c6d019"),
+                            AddedOn = new DateTime(2024, 11, 10, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8934),
+                            CategoryId = 9,
+                            ImageUrl = "https://gfx3.senetic.com/akeneo-catalog/0/b/d/1/0bd1c975a95be30f9e40a9a2a149c65aabdcf696_1651906_DELL_U2723QE_image1.jpg",
+                            IsDeleted = false,
+                            ManufacturerId = 17,
+                            ProductDescription = "27-inch 4K UHD monitor with excellent color accuracy.",
+                            ProductName = "Dell UltraSharp U2723QE",
+                            ProductPrice = 649.99m,
+                            StockQuantity = 12
+                        },
+                        new
+                        {
+                            Id = new Guid("e1aa8a4e-2c68-4c82-b189-785edfb9d973"),
+                            AddedOn = new DateTime(2024, 10, 24, 18, 41, 57, 328, DateTimeKind.Utc).AddTicks(8938),
+                            CategoryId = 9,
+                            ImageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsH4TNyBkDn0CnGXN6sXfv4nE1eF1B7rgUWA&s",
+                            IsDeleted = false,
+                            ManufacturerId = 19,
+                            ProductDescription = "27-inch 4K 144Hz gaming monitor with HDR support.",
+                            ProductName = "LG UltraGear 27GP950-B",
+                            ProductPrice = 799.99m,
                             StockQuantity = 5
                         });
                 });

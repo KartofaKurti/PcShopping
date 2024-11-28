@@ -17,6 +17,7 @@ using static PcBuilder.Common.ProductValidation;
 using PcBuilder.Data.Models.Enums;
 using NuGet.Protocol.Core.Types;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace PcBuilder.Services.Data
 {
@@ -194,9 +195,80 @@ namespace PcBuilder.Services.Data
             return true;
         }
 
-        public async Task<ProductSearchViewModel> SearchProductsAsync(ProductSearchViewModel searchModel, int page = 1, int pageSize = 10)
+        public async Task<PaginatedProductsViewModel> SearchProductsAsync(
+    string? name,
+    int? manufacturerId,
+    int? categoryId,
+    decimal? minPrice,
+    decimal? maxPrice,
+    int page = 1,
+    int pageSize = 18)
         {
-            return null;
+            if (page < 1) page = 1;
+            if (pageSize < 1) pageSize = 18;
+
+            var query = _productRepository.GetAllAttached();
+
+            query = query.Where(p => !p.IsDeleted);
+
+            if (!string.IsNullOrWhiteSpace(name))
+            {
+                query = query.Where(p => EF.Functions.Like(p.ProductName, $"%{name}%"));
+            }
+
+            if (manufacturerId.HasValue)
+            {
+                query = query.Where(p => p.ManufacturerId == manufacturerId.Value);
+            }
+
+            if (categoryId.HasValue)
+            {
+                query = query.Where(p => p.CategoryId == categoryId.Value);
+            }
+
+            if (minPrice.HasValue)
+            {
+                query = query.Where(p => p.ProductPrice >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                query = query.Where(p => p.ProductPrice <= maxPrice.Value);
+            }
+
+            
+            query = query
+                .Include(p => p.Manufacturer)
+                .Include(p => p.Category);
+
+            var totalResults = await query.CountAsync();
+            var totalPages = (int)Math.Ceiling(totalResults / (double)pageSize);
+
+            var products = await query
+                .OrderBy(p => p.ProductName)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            var paginatedViewModel = new PaginatedProductsViewModel
+            {
+                Products = products.Select(p => new AllProductsIndexViewModel
+                {
+                    Id = p.Id.ToString(),
+                    ProductName = p.ProductName,
+                    ProductPrice = p.ProductPrice,
+                    ImageUrl = p.ImageUrl ?? ImageNotFoundUrl,
+                    Quantity = p.StockQuantity,
+                    isDeleted = p.IsDeleted,
+                    AddedOn = p.AddedOn.ToString(ReleaseDateFormat),
+                    ManufacturerName = p.Manufacturer?.ManufacturerName,
+                    CategoryName = p.Category?.CategoryName
+                }).ToList(),
+                CurrentPage = page,
+                TotalPages = totalPages
+            };
+
+            return paginatedViewModel;
         }
     }
 }

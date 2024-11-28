@@ -19,6 +19,12 @@ namespace PcBuilder.Services.Data.Interfaces
         public Task<bool> HardDeleteProductAsync(Guid id);
         public Task<bool> EditProductAsync(EditProductViewModel model);
         public Task<Product?> GetProductByIdAsync(Guid id);
-        Task<ProductSearchViewModel> SearchProductsAsync(ProductSearchViewModel searchModel, int page = 1, int pageSize = 10);
+        public Task<PaginatedProductsViewModel> SearchProductsAsync(string? name,
+	        int? manufacturerId,
+	        int? categoryId,
+	        decimal? minPrice,
+	        decimal? maxPrice,
+	        int page = 1,
+	        int pageSize = 18);
     }
 }

@@ -1,45 +1,59 @@
 ﻿@model PcBuilder.Web.ViewModels.Cart.CartViewModel
 
 @{
-	ViewData["Title"] = "Your Cart";
+    ViewData["Title"] = "Your Cart";
 }
 
 <h2 class="text-center mb-4">Your Cart</h2>
 
 <div class="cart-items">
-	@foreach (var product in Model.Items) 
-	{
-		<div class="cart-item card mb-3">
-			<div class="row g-0">
-				<div class="col-md-3">
-					<img src="@product.ImageUrl" alt="@product.ProductName" class="img-fluid rounded-start cart-item-img" />
-				</div>
-				<div class="col-md-9">
-					<div class="card-body">
-						<h5 class="card-title">@product.ProductName</h5>
-						<p><strong>Price:</strong> @product.ProductPrice.ToString("C")</p>
-						<form asp-controller="Cart" asp-action="RemoveFromCart" method="post" class="d-inline">
-							<input type="hidden" name="productId" value="@product.ProductId" />
-							<button type="submit" class="btn btn-danger">Remove from Cart</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	}
+    @foreach (var product in Model.Items)
+    {
+        <div class="cart-item card mb-3">
+            <div class="row g-0">
+                <div class="col-md-3">
+                    <img src="@product.ImageUrl" alt="@product.ProductName" class="img-fluid rounded-start cart-item-img" />
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body">
+                        <h5 class="card-title">@product.ProductName</h5>
+                        <p><strong>Price per Item:</strong> @product.ProductPrice.ToString("C")</p>
+                        <p><strong>Total Price:</strong> @((product.ProductPrice * product.Quantity).ToString("C"))</p>
+                        <div class="quantity-controls">
+                            <form method="post" asp-action="UpdateQuantity" asp-controller="Cart" class="d-inline">
+                                <input type="hidden" name="productId" value="@product.ProductId" />
+                                <input type="hidden" name="quantity" value="@(product.Quantity - 1)" />
+                                <button type="submit" class="btn btn-secondary btn-sm" @(product.Quantity == 1 ? "disabled" : "")>-1</button>
+                            </form>
+                            <span class="mx-2">@product.Quantity</span>
+                            <form method="post" asp-action="UpdateQuantity" asp-controller="Cart" class="d-inline">
+                                <input type="hidden" name="productId" value="@product.ProductId" />
+                                <input type="hidden" name="quantity" value="@(product.Quantity + 1)" />
+                                <button type="submit" class="btn btn-secondary btn-sm">+1</button>
+                            </form>
+                        </div>
+                        <form asp-controller="Cart" asp-action="RemoveFromCart" method="post" class="d-inline">
+                            <input type="hidden" name="productId" value="@product.ProductId" />
+                            <button type="submit" class="btn btn-danger">Remove from Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div>
 
 <h3 class="text-center mt-4">Total Price: @Model.TotalPrice.ToString("C")</h3>
 
 @if (Model.Items.Count > 0)
 {
-	<div class="text-center mt-4">
-		<form asp-controller="Order" asp-action="CreateOrder" method="get">
-			<button type="submit" class="btn btn-success">Proceed to Checkout</button>
-		</form>
-	</div>
+    <div class="text-center mt-4">
+        <form asp-controller="Order" asp-action="CreateOrder" method="get">
+            <button type="submit" class="btn btn-success">Proceed to Checkout</button>
+        </form>
+    </div>
 }
 else
 {
-	<p class="text-center mt-4">No Items in Cart!</p>
+    <p class="text-center mt-4">No Items in Cart!</p>
 }

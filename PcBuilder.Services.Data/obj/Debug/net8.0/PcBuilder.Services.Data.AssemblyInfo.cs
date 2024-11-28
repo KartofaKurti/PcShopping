@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PcBuilder.Services.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5af1d946dada9dcaf9246043767ff1b0e8079fef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c236a5e148f19d5dfdfb62869784f329a63307d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PcBuilder.Services.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PcBuilder.Services.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

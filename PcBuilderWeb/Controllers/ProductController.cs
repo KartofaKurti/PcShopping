@@ -25,7 +25,7 @@ namespace PcBuilderWeb.Controllers
 
         [AllowAnonymous]
         [HttpGet]
-		public async Task<IActionResult> Index(int page = 1, int pageSize = 6)
+		public async Task<IActionResult> Index(int page = 1, int pageSize = 18)
 		{
             IEnumerable<AllProductsIndexViewModel> allProducts =
                 await this.productService.GetAllProductsAsync();
@@ -132,5 +132,30 @@ namespace PcBuilderWeb.Controllers
 
             return View(model);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> SearchProducts(
+            string? name,
+            int? manufacturerId,
+            int? categoryId,
+            decimal? minPrice,
+            decimal? maxPrice,
+            int page = 1,
+            int pageSize = 18)
+        {
+            
+            ViewBag.SearchName = name;
+            ViewBag.SelectedManufacturer = manufacturerId;
+            ViewBag.SelectedCategory = categoryId;
+            ViewBag.MinPrice = minPrice;
+            ViewBag.MaxPrice = maxPrice;
+
+            var paginatedViewModel = await productService.SearchProductsAsync(
+                name, manufacturerId, categoryId, minPrice, maxPrice, page, pageSize);
+
+            return View("Index", paginatedViewModel);
+        }
+
     }
 }

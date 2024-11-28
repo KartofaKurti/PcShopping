@@ -23,7 +23,7 @@ namespace PcBuilder.Data
 		
         public DbSet<OrderProduct> OrderProducts { get; set; }
 
-		public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
+        public PCBuilderDbContext(DbContextOptions<PCBuilderDbContext> options)
             : base(options)
         {
         }
@@ -37,10 +37,19 @@ namespace PcBuilder.Data
             modelBuilder.Entity<AplicationUserOrder>()
 	            .HasKey(cr => new { cr.ApplicationUserId, cr.OrderId });
 
-           
+            modelBuilder.Entity<Order>()
+                .Property(o => o.TotalPrice)
+                .HasPrecision(18, 2); 
 
+            modelBuilder.Entity<OrderProduct>()
+                .Property(op => op.Price)
+                .HasPrecision(18, 2);
 
-			modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
+            modelBuilder.Entity<Product>()
+                .Property(p => p.ProductPrice)
+                .HasPrecision(18, 2);
+
+            modelBuilder.ApplyConfiguration(new ManufacturerEntityConfigurations());
             modelBuilder.ApplyConfiguration(new CategoryEntityConfigurations());
             modelBuilder.ApplyConfiguration(new ProductEntityConfigurations());
         }

@@ -80,5 +80,26 @@ namespace PcBuilderWeb.Controllers
 
 			return RedirectToAction(nameof(Index));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateQuantity(Guid productId, int quantity)
+        {
+            if (quantity < 1)
+            {
+                return BadRequest("Quantity must be at least 1.");
+            }
+
+            var userId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)); 
+
+            var result = await _cartService.UpdateQuantityAsync(productId, userId, quantity);
+
+            if (!result.Success)
+            {
+                TempData["ErrorMessage"] = result.Message;
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\PcBuilder.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\AboutUs.css",
+      "PackagePath": "staticwebassets\\css\\AboutUs.css"
+    },
+    {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\css\\AddProduct.css",
       "PackagePath": "staticwebassets\\css\\AddProduct.css"
     },
@@ -47,6 +51,18 @@
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\imgs\\image1.jfif",
+      "PackagePath": "staticwebassets\\imgs\\image1.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\imgs\\image2.webp",
+      "PackagePath": "staticwebassets\\imgs\\image2.webp"
+    },
+    {
+      "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\imgs\\image3.webp",
+      "PackagePath": "staticwebassets\\imgs\\image3.webp"
     },
     {
       "Id": "C:\\Users\\Kartof\\Desktop\\C#WebProject--PcShopingWEb\\PcShopping\\PcBuilderWeb\\wwwroot\\js\\hardDelete.js",

@@ -26,66 +26,66 @@ public class OrderService : BaseService, IOrderService
 		_orderItemRepository = orderItemRepository; 
 	}
 
-	public async Task<bool> CreateOrderAsync(string userId, IEnumerable<ApplicationUserCartViewModel> cartItems, string address)
-	{
-		try
-		{
-			var userGuid = Guid.Parse(userId);
-			var orderGuid = Guid.NewGuid();
-			var totalPrice = cartItems.Sum(item => item.ProductPrice * item.Quantity);
+    public async Task<bool> CreateOrderAsync(string userId, IEnumerable<ApplicationUserCartViewModel> cartItems, string address)
+    {
+        try
+        {
+            var userGuid = Guid.Parse(userId);
+            var orderGuid = Guid.NewGuid();
+            var totalPrice = cartItems.Sum(item => item.ProductPrice * item.Quantity);
 
-			var order = new Order
-			{
-				Id = orderGuid,
-				OrderDate = DateTime.Now,
-				ProductQuantity = cartItems.Sum(item => item.Quantity),
-				TotalPrice = totalPrice,
-				Address = address
-			};
+            foreach (var item in cartItems)
+            {
+                var product = await _productRepository.GetByIdAsync(Guid.Parse(item.ProductId));
+                if (product == null || product.StockQuantity < item.Quantity)
+                {
+                    
+                    return false;
+                }
+            }
 
-			await _orderRepository.AddAsync(order);
+            var order = new Order
+            {
+                Id = orderGuid,
+                OrderDate = DateTime.Now,
+                ProductQuantity = cartItems.Sum(item => item.Quantity),
+                TotalPrice = totalPrice,
+                Address = address
+            };
 
-			foreach (var item in cartItems)
-			{
-				var orderItem = new OrderProduct()
-				{
-					OrderId = orderGuid,
-					ProductId = Guid.Parse(item.ProductId),
-					Quantity = item.Quantity,
-					Price = item.ProductPrice,
-					ProductName = item.ProductName,
-				};
+            await _orderRepository.AddAsync(order);
 
-				await _orderItemRepository.AddAsync(orderItem);
+            foreach (var item in cartItems)
+            {
+                var orderItem = new OrderProduct()
+                {
+                    OrderId = orderGuid,
+                    ProductId = Guid.Parse(item.ProductId),
+                    Quantity = item.Quantity,
+                    Price = item.ProductPrice,
+                    ProductName = item.ProductName,
+                };
 
-				var product = await _productRepository.GetByIdAsync(Guid.Parse(item.ProductId));
-				if (product != null)
-				{
-					product.StockQuantity -= item.Quantity; 
-					await _productRepository.UpdateAsync(product); 
-				}
-			}
+                await _orderItemRepository.AddAsync(orderItem);
+
+                var product = await _productRepository.GetByIdAsync(Guid.Parse(item.ProductId));
+                if (product != null)
+                {
+                    product.StockQuantity -= item.Quantity;
+                    await _productRepository.UpdateAsync(product);
+                }
+            }
+
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 
 
-			var userOrder = new AplicationUserOrder
-			{
-				ApplicationUserId = userGuid,
-				OrderId = orderGuid
-			};
-
-			await _usersOrdersRepository.AddAsync(userOrder);
-
-
-			return true;
-		}
-		catch (Exception ex)
-		{
-			Console.WriteLine($"Error creating order: {ex.Message}");
-			return false;
-		}
-	}
-
-	public async Task<IEnumerable<OrderDetailsViewModel>> GetAllOrdersAsync()
+    public async Task<IEnumerable<OrderDetailsViewModel>> GetAllOrdersAsync()
 	{
         var userOrders = await _usersOrdersRepository
             .GetAllAttached()
