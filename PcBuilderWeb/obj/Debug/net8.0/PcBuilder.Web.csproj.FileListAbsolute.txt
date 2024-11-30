@@ -326,3 +326,9 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\D
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.WebApi.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\PcBuilder.WebApi.pdb
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\Moq.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\xunit.core.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilderWeb\bin\Debug\net8.0\xunit.execution.dotnet.dll

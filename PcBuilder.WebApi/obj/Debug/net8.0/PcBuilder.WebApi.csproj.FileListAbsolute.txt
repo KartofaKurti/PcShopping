@@ -282,3 +282,9 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\o
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\obj\Debug\net8.0\PcBuilder.WebApi.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\obj\Debug\net8.0\PcBuilder.WebApi.genruntimeconfig.cache
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\obj\Debug\net8.0\ref\PcBuilder.WebApi.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\Moq.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\xunit.assert.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\xunit.core.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.WebApi\bin\Debug\net8.0\xunit.execution.dotnet.dll

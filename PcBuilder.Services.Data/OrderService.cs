@@ -28,9 +28,20 @@ public class OrderService : BaseService, IOrderService
 
     public async Task<bool> CreateOrderAsync(string userId, IEnumerable<ApplicationUserCartViewModel> cartItems, string address)
     {
+        if (!Guid.TryParse(userId, out var userGuid))
+        {
+            Console.WriteLine("Invalid user ID");
+            return false;
+        }
+
+        if (cartItems == null || !cartItems.Any())
+        {
+            Console.WriteLine("Cart items are empty");
+            return false;
+        }
+
         try
         {
-            var userGuid = Guid.Parse(userId);
             var orderGuid = Guid.NewGuid();
             var totalPrice = cartItems.Sum(item => item.ProductPrice * item.Quantity);
 
@@ -39,11 +50,12 @@ public class OrderService : BaseService, IOrderService
                 var product = await _productRepository.GetByIdAsync(Guid.Parse(item.ProductId));
                 if (product == null || product.StockQuantity < item.Quantity)
                 {
-                    
+                    Console.WriteLine($"Insufficient stock for product: {item.ProductId}");
                     return false;
                 }
             }
 
+          
             var order = new Order
             {
                 Id = orderGuid,
@@ -55,9 +67,19 @@ public class OrderService : BaseService, IOrderService
 
             await _orderRepository.AddAsync(order);
 
+           
+            var userOrder = new AplicationUserOrder
+            {
+                ApplicationUserId = userGuid,
+                OrderId = orderGuid
+            };
+
+            await _usersOrdersRepository.AddAsync(userOrder);
+
+           
             foreach (var item in cartItems)
             {
-                var orderItem = new OrderProduct()
+                var orderItem = new OrderProduct
                 {
                     OrderId = orderGuid,
                     ProductId = Guid.Parse(item.ProductId),
@@ -76,41 +98,60 @@ public class OrderService : BaseService, IOrderService
                 }
             }
 
+            Console.WriteLine("Order creation successful");
             return true;
         }
-        catch
+        catch (Exception ex)
         {
+            Console.WriteLine($"Error creating order: {ex.Message}");
             return false;
         }
     }
 
 
+
     public async Task<IEnumerable<OrderDetailsViewModel>> GetAllOrdersAsync()
 	{
-        var userOrders = await _usersOrdersRepository
-            .GetAllAttached()
-            .Include(uo => uo.ApplicationUser)  
-            .Include(uo => uo.Order)
-            .ThenInclude(o => o.OrderProducts)
-            .ThenInclude(op => op.Product)
-            .ToListAsync();
-
-        return userOrders.Select(uo => new OrderDetailsViewModel
+        try
         {
-            OrderId = uo.Order.Id,
-            OrderDate = uo.Order.OrderDate,
-            ProductQuantity = uo.Order.ProductQuantity,
-            TotalPrice = uo.Order.TotalPrice,
-            Address = uo.Order.Address,
-            UserName = uo.ApplicationUser.UserName,  
-            OrderItems = uo.Order.OrderProducts.Select(op => new OrderItemViewModel
+            var userOrders = await _usersOrdersRepository
+                .GetAllAttached()
+                .Include(uo => uo.ApplicationUser)
+                .Include(uo => uo.Order)
+                .ThenInclude(o => o.OrderProducts)
+                .ThenInclude(op => op.Product)
+                .ToListAsync();
+
+            Console.WriteLine($"Loaded {userOrders.Count} user orders from repository.");
+
+            if (!userOrders.Any())
             {
-                ProductName = op.ProductName,
-                ProductPrice = op.Price,
-                Quantity = op.Quantity
-            }).ToList()
-        }).ToList(); ;
-	}
+                throw new Exception("No user orders found in the repository.");
+            }
+
+            return userOrders.Select(uo => new OrderDetailsViewModel
+            {
+                OrderId = uo.Order.Id,
+                OrderDate = uo.Order.OrderDate,
+                ProductQuantity = uo.Order.ProductQuantity,
+                TotalPrice = uo.Order.TotalPrice,
+                Address = uo.Order.Address,
+                UserName = uo.ApplicationUser.UserName,
+                OrderItems = uo.Order.OrderProducts.Select(op => new OrderItemViewModel
+                {
+                    ProductName = op.Product?.ProductName ?? "Unknown Product",
+                    ProductPrice = op.Product?.ProductPrice ?? 0,
+                    Quantity = op.Quantity
+                }).ToList()
+            }).ToList();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching orders: {ex.Message}");
+            throw;
+        }
+    }
+    
 
 	public async Task<IEnumerable<OrderViewModel>> GetOrdersByUserAsync(string userId)
 	{

@@ -18,3 +18,5 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.View
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\refint\PcBuilder.Web.ViewModels.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\ref\PcBuilder.Web.ViewModels.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\bin\Debug\net8.0\PcBuilder.Web.ViewModels.runtimeconfig.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.ViewModels\obj\Debug\net8.0\PcBuilder.Web.ViewModels.genruntimeconfig.cache

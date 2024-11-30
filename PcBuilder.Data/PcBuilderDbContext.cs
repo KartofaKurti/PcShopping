@@ -30,6 +30,8 @@ namespace PcBuilder.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
+
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<ApplicationUserProduct>()
                 .HasKey(cr => new { cr.ApplicationUserId, cr.ProductId });

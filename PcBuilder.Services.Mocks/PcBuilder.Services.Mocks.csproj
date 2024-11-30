@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PcBuilder.Common\PcBuilder.Common.csproj" />
+    <ProjectReference Include="..\PcBuilder.Data.Models\PcBuilder.Data.Models.csproj" />
+    <ProjectReference Include="..\PcBuilder.Data\PcBuilder.Data.csproj" />
+    <ProjectReference Include="..\PcBuilder.Services.Data\PcBuilder.Services.Data.csproj" />
+  </ItemGroup>
+
+</Project>

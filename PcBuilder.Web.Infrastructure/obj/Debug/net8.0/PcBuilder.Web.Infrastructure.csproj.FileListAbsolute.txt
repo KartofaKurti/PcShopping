@@ -18,3 +18,5 @@ C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infr
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infrastructure\obj\Debug\net8.0\refint\PcBuilder.Web.Infrastructure.dll
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infrastructure\obj\Debug\net8.0\PcBuilder.Web.Infrastructure.pdb
 C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infrastructure\obj\Debug\net8.0\ref\PcBuilder.Web.Infrastructure.dll
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infrastructure\bin\Debug\net8.0\PcBuilder.Web.Infrastructure.runtimeconfig.json
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Web.Infrastructure\obj\Debug\net8.0\PcBuilder.Web.Infrastructure.genruntimeconfig.cache

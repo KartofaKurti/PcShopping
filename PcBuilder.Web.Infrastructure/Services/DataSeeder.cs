@@ -66,7 +66,7 @@ namespace PcBuilder.Web.Infrastructure.Services
             }
 
             
-            string userEmail = "c";
+            string userEmail = "john.doe@example.com";
             string userPassword = "Password123!";
 
             var normalUser = await userManager.FindByEmailAsync(userEmail);

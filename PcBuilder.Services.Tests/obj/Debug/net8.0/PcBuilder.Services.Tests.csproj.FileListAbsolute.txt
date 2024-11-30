@@ -1,0 +1,7 @@
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\bin\Debug\net8.0\CoverletSourceRootsMapping_PcBuilder.Services.Tests
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.csproj.AssemblyReference.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.AssemblyInfoInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.AssemblyInfo.cs
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Kartof\Desktop\C#WebProject--PcShopingWEb\PcShopping\PcBuilder.Services.Tests\obj\Debug\net8.0\PcBuilder.Services.Tests.sourcelink.json
