@@ -32,6 +32,11 @@ namespace PcBuilderWeb.Controllers
 		[HttpGet]
         public async Task<IActionResult> Index()
         {
+	        if (User.IsInRole(AdminRole))
+	        {
+		        return RedirectToAction("Error", "Home", new { statusCode = 401 });
+	        }
+
 			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
 
 			var cartItems = await _cartService.GetUserCartByUserIdAsync(userId); 

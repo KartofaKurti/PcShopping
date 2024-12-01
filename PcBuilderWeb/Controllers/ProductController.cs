@@ -13,7 +13,7 @@ using static PcBuilder.Common.ProductValidation;
 
 namespace PcBuilderWeb.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class ProductController : BaseController
     {
 	    private readonly IProductService productService;
@@ -54,6 +54,7 @@ namespace PcBuilderWeb.Controllers
 
 		[Authorize(Roles = AdminRole)]
 		[HttpGet]
+		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> AddProduct()
 		{
 			return View("AddProduct", new AddProductViewModel());
@@ -63,6 +64,7 @@ namespace PcBuilderWeb.Controllers
 
 		[Authorize(Roles = AdminRole)]
 		[HttpPost]
+		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> AddProduct(AddProductViewModel inputModel)
 		{
            

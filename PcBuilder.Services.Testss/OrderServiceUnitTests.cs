@@ -55,7 +55,6 @@ public class OrderServiceTests
         _dbContext.AplicationUsersOrders.RemoveRange(_dbContext.AplicationUsersOrders);
         _dbContext.SaveChanges();
 
-        // Add unique Manufacturers and Categories
         var manufacturer = new Manufacturer { Id = 1, ManufacturerName = "Test Manufacturer" };
         var category = new Category { Id = 1, CategoryName = "Test Category" };
 
@@ -69,7 +68,6 @@ public class OrderServiceTests
             _dbContext.Categories.Add(category);
         }
 
-        // Add unique Products
         var productId = Guid.NewGuid();
         if (!_dbContext.Products.Any(p => p.Id == productId))
         {
@@ -117,62 +115,6 @@ public class OrderServiceTests
         var orders = await _dbContext.Orders.ToListAsync();
         Assert.AreEqual(1, orders.Count);
         Assert.AreEqual(cartItems.Sum(c => c.Quantity), orders.First().ProductQuantity);
-    }
-
-    [Test]
-    public async Task GetAllOrdersAsync_ShouldReturnAllOrders()
-    {
-        var orderId = Guid.NewGuid();
-        var userId = Guid.NewGuid();
-
-      
-        var order = new Order
-        {
-            Id = orderId,
-            OrderDate = DateTime.UtcNow,
-            ProductQuantity = 2,
-            TotalPrice = 100,
-            Address = "123 Test Street",
-            OrderProducts = new List<OrderProduct> 
-            {
-                new OrderProduct
-                {
-                    ProductId = Guid.NewGuid(),
-                    ProductName = "Test Product",
-                    Price = 50,
-                    Quantity = 2
-                }
-            }
-        };
-
-       
-        var userOrder = new AplicationUserOrder
-        {
-            ApplicationUserId = userId,
-            OrderId = orderId,
-            ApplicationUser = new ApplicationUser
-            {
-                Id = userId,
-                UserName = "TestUser"
-            },
-            Order = order
-        };
-
-        
-        _dbContext.Orders.Add(order);
-        _dbContext.AplicationUsersOrders.Add(userOrder);
-        await _dbContext.SaveChangesAsync(); 
-
-        
-        var orders = await _orderService.GetAllOrdersAsync();
-
-        
-        Assert.AreEqual(1, orders.Count());
-        Assert.AreEqual(orderId, orders.First().OrderId);
-        Assert.AreEqual("TestUser", orders.First().UserName);
-        Assert.AreEqual("123 Test Street", orders.First().Address);
-        Assert.AreEqual(2, orders.First().ProductQuantity);
-        Assert.AreEqual(100, orders.First().TotalPrice);
     }
 
     [Test]

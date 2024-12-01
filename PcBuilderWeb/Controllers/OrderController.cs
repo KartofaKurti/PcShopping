@@ -18,8 +18,8 @@ using static PcBuilder.Common.RolesValidation;
 
 namespace PcBuilderWeb.Controllers
 {
-	[Authorize]
-	public class OrderController : Controller
+    [Authorize]
+    public class OrderController : Controller
 	{
 		private readonly ICartService _cartService;
 		private readonly IOrderService _orderService;
@@ -42,6 +42,7 @@ namespace PcBuilderWeb.Controllers
 			return View(orders);
 		}
 
+        [Authorize(Roles = AdminRole)]
         [HttpGet]
         public async Task<IActionResult> OrderDetails(Guid orderId)
         {

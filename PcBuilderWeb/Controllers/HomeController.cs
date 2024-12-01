@@ -19,14 +19,33 @@ namespace PcBuilderWeb.Controllers
             return View();
         }
 
+		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+		public IActionResult Error(int? statusCode)
+		{
+			var code = statusCode ?? 500;
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+			if (code == 401)
+			{
+				return View("Error401"); 
+			}
 
-        public async Task<IActionResult> Index()
+			if (code == 404)
+			{
+				return View("Error404"); 
+			}
+
+			if (code == 500)
+			{
+				ViewBag.Message = "An unexpected error occurred.";
+				return View("Error500"); 
+			}
+
+			ViewBag.StatusCode = code;
+			ViewBag.Message = "An error occurred.";
+			return View(); 
+		}
+
+		public async Task<IActionResult> Index()
         {
             
             var products = (await _productService.GetAvailableProductsAsync()).Take(4); 

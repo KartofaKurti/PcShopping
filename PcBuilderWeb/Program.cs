@@ -64,11 +64,18 @@ public class Program
 
 		var app = builder.Build();
 
-       
-        if (!app.Environment.IsDevelopment())
+
+        if (app.Environment.IsDevelopment())
         {
-            app.UseExceptionHandler("/Home/Error");
-            app.UseHsts();
+            app.UseMigrationsEndPoint();
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+			app.UseExceptionHandler("/Home/Error"); 
+			app.UseStatusCodePagesWithReExecute("/Home/Error", "?statusCode={0}");
+
+			app.UseHsts();
         }
 
         app.UseHttpsRedirection();
