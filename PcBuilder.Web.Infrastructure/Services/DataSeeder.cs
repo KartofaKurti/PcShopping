@@ -51,7 +51,7 @@ namespace PcBuilder.Web.Infrastructure.Services
 
                 var adminResult = await userManager.CreateAsync(adminUser, adminPassword);
 
-                
+
                 identityOptions.Value.Password = originalOptions.Password;
 
                 if (adminResult.Succeeded)
@@ -65,7 +65,7 @@ namespace PcBuilder.Web.Infrastructure.Services
                 }
             }
 
-            
+
             string userEmail = "john.doe@example.com";
             string userPassword = "Password123!";
 
